@@ -1,0 +1,130 @@
+@import 'reset.less';
+
+@blue-light: #add8e6;
+@black-light: #17181a;
+@black-lighter: #27282b;
+@red-nav: #ae1f23;
+@gray-light: #ecec3d;
+@gray-lighter: #969798;
+
+body {
+    background-color: #ececed;
+    color: @gray-lighter;
+}
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.clearleft { clear: left; }
+.clearright { clear: right; }
+
+.header {
+    height: 80px;
+    background-color: @black-lighter;
+    overflow: hidden;
+    text-align: center;
+    h1, ul.nav {
+        margin: 20px 5%;
+    }
+}
+.center {
+    text-align: center;
+}
+.topic-group {
+    text-align: center;
+    margin: 20px 20%;
+    width: 940px;
+    overflow: hidden;
+}
+.topic {
+    float: left;
+    margin-right: 40px;
+    padding: 10px;
+    border: @black-light 1px solid;
+    width: 220px;
+    height: 250px;
+    background-color: @black-light;
+    h3 {
+        color: lighten(@red-nav, 20%);
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    p { 
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+
+}
+.intro {
+    margin-top: 40px;
+    h1 {
+        color: black;
+    }
+}
+.tenets {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: @black-light;
+    dt {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: lighten(@red-nav, 20%);
+    }
+    dd {
+        font-size: 16px;
+        color: @gray-lighter;
+    }
+}
+h1.brand {
+    a {
+        color: @blue-light;
+        text-decoration: none;
+        &:hover {
+            color: darken(@blue-light, 15%);
+        }
+    }
+    font-size: 30px;
+}
+.x-large {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+.large {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+ul.nav {
+    list-style: none;
+    overflow: hidden;
+    background-color: @red-nav;
+    @link-color: white; 
+    li {
+        border-right: darken(@red-nav, 5%) 1px solid;
+        float: left;
+        a {
+            color: @link-color;
+            display: block;
+            padding: 0 1em;
+            line-height: 2.1em;
+            text-decoration: none;
+            border: none;
+        }
+        &.active {
+            & a { 
+                background-color: lighten(@red-nav, 20%);
+            }
+            &:hover {
+                & a { 
+                    background-color: lighten(@red-nav, 20%);
+                }
+            }
+        }
+        &:hover {
+            & a { 
+                background-color: lighten(@red-nav, 10%);
+            }
+        }
+    }
+}
