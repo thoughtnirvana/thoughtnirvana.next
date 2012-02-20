@@ -1,0 +1,15 @@
+tenets:
+    - header: Not a penny more, not a penny less
+      description: We build software for your needs, which is often different from what you initially want. We work with you to transform "want" into "need" into "working software".
+
+    - header: Honesty and integrity matters
+      description: We appreciate you chose to work with us - we work very hard to ensure quality, honesty, transparency and clarity.
+
+    - header: Talk is cheap, show me the code
+      description: We assure that measurable progress is being delivered to you starting day 1.
+
+    - header: The only constant is change
+      description: We know and respect this and work with you to let the software evolve.
+
+    - header: Straight from the gut
+      description: We don't play buzzword bingo.

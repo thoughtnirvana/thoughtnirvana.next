@@ -1,0 +1,15 @@
+.center.intro
+  h1.x-large ThoughtNirvana is a software development shop.
+  p.large We create magic on and off the web.
+.center.tenets
+  dl
+    - for tenet in tenets
+      dt = tenet["header"]
+      dd = tenet["description"]
+
+- services.each_slice(3) do |service_group|
+  .topic-group
+    - service_group.each do |service|
+      .topic
+        h3 = service["header"]
+        p = service["description"]
