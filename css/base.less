@@ -4,7 +4,7 @@
 @black-light: #17181a;
 @black-lighter: #27282b;
 @red-nav: #ae1f23;
-@gray-light: #ecec3d;
+@red-header: #d35357;
 @gray-lighter: #969798;
 
 body {
@@ -17,6 +17,14 @@ body {
 .clearleft { clear: left; }
 .clearright { clear: right; }
 
+a {
+    color: @red-header;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+    &:hover {
+        color: lighten(@red-header, 10%);
+    }
+}
 .header {
     height: 80px;
     background-color: black;
@@ -54,7 +62,7 @@ body {
     height: 200px;
     background-color: @black-light;
     h3 {
-        color: lighten(@red-nav, 20%);
+        color: @red-header;
         font-size: 22px;
         margin-bottom: 20px;
     }
@@ -63,6 +71,10 @@ body {
         line-height: 1.5em;
     }
 
+}
+.small {
+    font-size: 14px;
+    color: #d9d9d9;
 }
 .intro {
     margin-top: 40px;
@@ -80,19 +92,20 @@ body {
         margin-top: 15px;
         margin-bottom: 10px;
         font-size: 20px;
-        color: lighten(@red-nav, 20%);
+        color: @red-header;
     }
     dd {
         font-size: 16px;
         color: @gray-lighter;
     }
 }
-h1.brand {
+.header h1.brand {
     a {
         color: @blue-light;
         text-decoration: none;
+        border: none;
         &:hover {
-            color: darken(@blue-light, 15%);
+            color: lighten(@blue-light, 10%);
         }
     }
     font-size: 30px;

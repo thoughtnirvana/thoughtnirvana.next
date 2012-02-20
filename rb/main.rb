@@ -2,15 +2,18 @@
 require 'slim'
 require 'yaml'
 require 'digest'
+require 'ruby-debug'
 
-class Env 
+$cur_dir = File.dirname(__FILE__)
+
+class Env
   def initialize(scope={})
     scope.each {|k, v| define_singleton_method(k, proc { v }) }
-    @layout = Slim::Template.new('layout.html.slim') 
+    @layout = Slim::Template.new(File.join($cur_dir, 'layout.html.slim'))
   end
 
   def render(template, layout=true)
-    contents = Slim::Template.new(template).render(self)
+    contents = Slim::Template.new(File.join($cur_dir, template)).render(self)
     return contents if not layout
     @layout.render(self) { contents }
   end
@@ -45,20 +48,31 @@ class Env
   end
 end
 
-def index
-  tenets = YAML.load_file('data/tenets.yml')['tenets']
-  services = YAML.load_file('data/services.yml')['services']
+def load_yaml(filename)
+  YAML.load_file(File.join($cur_dir, filename))
+end
+
+def page_index
+  tenets = load_yaml('data/tenets.yml')['tenets']
+  services = load_yaml('data/services.yml')['services']
   scope = Env.new(tenets: tenets, services: services)
   scope.render('index.html.slim')
 end
 
-def code
-  Env.new.render('code.html.slim')
+def page_code
+  repos = load_yaml('data/repos.yml')['repos'].sort_by {|repo| repo['header'].downcase }
+  scope = Env.new(repos: repos)
+  scope.render('code.html.slim')
 end
 
-if __FILE__ == $0
-  pages = [:index, :code]
+def gen_site(pretty=true)
+  Slim::Engine.set_default_options :pretty => pretty
+  pages = private_methods.grep(/^page_/) 
   pages.each do |page|
-    File.open("#{page.to_s}.html", 'w') {|f| f << send(page) }
+    page_name = page.to_s.sub('page_', '')
+    filename = File.expand_path("#$cur_dir/../#{page_name}.html")
+    File.open(filename, 'w') {|f| f << send(page) }
   end
 end
+
+gen_site if __FILE__ == $0

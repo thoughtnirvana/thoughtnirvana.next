@@ -1,0 +1,75 @@
+repos:
+    - header: xmldict
+      language: Python
+      link: https://github.com/thoughtnirvana/xmldict
+      description: Stuck with XML? Why not convert it to Python dictionaries?
+
+    - header: augment
+      language: Python
+      link: https://github.com/thoughtnirvana/augment
+      description: Racket's contracts made us jealous, so we created our own.
+
+    - header: flask-augment
+      language: Python
+      link: https://github.com/thoughtnirvana/flask-augment
+      description: Still stuck with validating request data manually? Welcome to 21st century.
+
+    - header: Flask Template
+      language: Python
+      link: https://github.com/thoughtnirvana/flask_template
+      description: This nifty little framework can do wonders. Here is a template to get you started.
+
+    - header: Functional
+      language: Ruby
+      link: https://github.com/thoughtnirvana/functional
+      description: A little add on to make Ruby a bit more functional.
+
+    - header: Samurai Client
+      language: Python
+      link: https://github.com/thoughtnirvana/samurai-client-python
+      description: We developed this Python wrapper for FeeFighters.
+
+    - header: Sinatra Autoversion
+      language: Ruby
+      link: https://github.com/thoughtnirvana/sinatra_autoversion
+      description: Cache bust your static assets in your sinatra app using this nifty extension.
+
+    - header: Sinatra Template
+      language: Ruby
+      link: https://github.com/thoughtnirvana/sinatra_template
+      description: Sinatra packs quite a punch. It's suited for big applications as well.
+
+    - header: Slimish Jinja2
+      language: Python
+      link: https://github.com/thoughtnirvana/slimish-jinja2
+      description: Love Jinja2 and Slim templates? No issues, we got them married.
+
+    - header: Ruby Itertools
+      language: Ruby
+      link: https://github.com/thoughtnirvana/rb_itertools
+      description: Port of Python's itertools module to Ruby.
+
+    - header: ThoughtNirvana
+      language: Ruby
+      link: https://github.com/thoughtnirvana/thoughtnirvana.next
+      description: Code for this site. It generates a static site out of ruby code and slim templates.
+
+    - header: Python Learners
+      language: Python
+      link: https://github.com/thoughtnirvana/python_learners
+      description: Library implementing learners for Python.
+
+    - header: Python Searchers
+      language: Python
+      link: https://github.com/thoughtnirvana/python_search
+      description: Implementation of various search algorithms in Python.
+
+    - header: www redirect
+      language: Ruby
+      link: https://github.com/thoughtnirvana/www_redirect
+      description: Simple rack application for redirecting naked domains to www.
+
+    - header: Python Utils
+      language: Python
+      link: https://github.com/thoughtnirvana/python_utils
+      description: Library implementing various sequence and other Python utilities.
