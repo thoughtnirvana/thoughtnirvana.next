@@ -16,9 +16,8 @@ class Env
   end
 
   def link_tag(filename, rel, type)
-    digest = sha1_digest(filename) 
     <<-EOF
-    <link href="#{filename};#{digest}" rel="#{rel}" type="#{type}" />
+    <link href="#{filename}" rel="#{rel}" type="#{type}" />
     EOF
   end
 
@@ -27,19 +26,18 @@ class Env
   end
 
   def less_tag(filename)
-    link_tag(filename, rel="stylesheet/css", type="text/css")
+    link_tag(filename, rel="stylesheet/less", type="text/css")
   end
 
   def js_tag(filename)
-    digest = sha1_digest(filename) 
     <<-EOF
-    <script src="#{filename};#{digest}" type="text/javascript"></script>
+    <script src="#{filename}" type="text/javascript"></script>
     EOF
   end
 
   private
   def sha1_digest(filename)
-    digest = Digest::SHA1.new
+    digest = Digest::MD5.new
     File.open(filename) do |f|
         digest.update f.read(8192) until f.eof
     end
