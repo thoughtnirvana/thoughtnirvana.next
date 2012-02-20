@@ -66,7 +66,7 @@ a {
         font-size: 22px;
         margin-bottom: 20px;
     }
-    p { 
+    p {
         font-size: 16px;
         line-height: 1.5em;
     }
@@ -122,7 +122,7 @@ ul.nav {
     list-style: none;
     overflow: hidden;
     background-color: @red-nav;
-    @link-color: white; 
+    @link-color: white;
     li {
         border-right: darken(@red-nav, 5%) 1px solid;
         float: left;
@@ -134,20 +134,28 @@ ul.nav {
             text-decoration: none;
             border: none;
         }
-        &.active {
-            & a { 
-                background-color: lighten(@red-nav, 20%);
-            }
-            &:hover {
-                & a { 
-                    background-color: lighten(@red-nav, 20%);
-                }
-            }
-        }
         &:hover {
-            & a { 
+            & a {
                 background-color: lighten(@red-nav, 10%);
             }
         }
     }
 }
+
+/* Highlight active tab */
+body.overview .nav li.overview,
+body.how .nav li.how,
+body.who .nav li.who,
+body.code .nav li.code,
+body.careers .nav li.careers {
+    & a {
+        background-color: lighten(@red-nav, 20%);
+    }
+    &:hover {
+        & a {
+            background-color: lighten(@red-nav, 20%);
+        }
+    }
+
+}
+

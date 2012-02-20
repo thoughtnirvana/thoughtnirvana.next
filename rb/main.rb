@@ -55,13 +55,13 @@ end
 def page_index
   tenets = load_yaml('data/tenets.yml')['tenets']
   services = load_yaml('data/services.yml')['services']
-  scope = Env.new(tenets: tenets, services: services)
+  scope = Env.new(tenets: tenets, services: services, page_name: 'overview')
   scope.render('index.html.slim')
 end
 
 def page_code
   repos = load_yaml('data/repos.yml')['repos'].sort_by {|repo| repo['header'].downcase }
-  scope = Env.new(repos: repos)
+  scope = Env.new(repos: repos, page_name: 'code')
   scope.render('code.html.slim')
 end
 

@@ -5,7 +5,7 @@ html
     == less_tag 'css/base.less'
     == js_tag 'js/less.js'
     link href="favicon.ico" rel="shortcut icon"
-    body
+    body class="#{page_name}"
       == render '_header.html.slim', false
       == yield
       == render '_footer.html.slim', false
