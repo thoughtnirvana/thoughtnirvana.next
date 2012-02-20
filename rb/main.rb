@@ -75,6 +75,12 @@ def page_code
   scope.render('code.html.slim')
 end
 
+def page_how
+  hows = load_yaml('data/hows.yml')['hows']
+  scope = Env.new(hows: hows, page_name: 'how')
+  scope.render('how.html.slim')
+end
+
 def gen_site(opts={})
   pretty = opts[:pretty] || true
   $prod = opts[:prod] || false
