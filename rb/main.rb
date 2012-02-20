@@ -5,6 +5,7 @@ require 'digest'
 require 'ruby-debug'
 
 $cur_dir = File.dirname(__FILE__)
+$prod = false
 
 class Env
   def initialize(scope={})
@@ -19,6 +20,7 @@ class Env
   end
 
   def link_tag(filename, rel, type)
+    filename = with_digest(filename) if $prod
     <<-EOF
     <link href="#{filename}" rel="#{rel}" type="#{type}" />
     EOF
@@ -33,12 +35,20 @@ class Env
   end
 
   def js_tag(filename)
+    filename = with_digest(filename) if $prod
     <<-EOF
     <script src="#{filename}" type="text/javascript"></script>
     EOF
   end
 
   private
+  def with_digest(filename)
+    hexdigest = sha1_digest(filename)
+    ext = File.extname filename
+    sans_ext = filename.sub(/#{ext}$/, '')
+    "#{sans_ext}.#{hexdigest}#{ext}"
+  end
+
   def sha1_digest(filename)
     digest = Digest::MD5.new
     File.open(filename) do |f|
@@ -67,7 +77,7 @@ end
 
 def gen_site(pretty=true)
   Slim::Engine.set_default_options :pretty => pretty
-  pages = private_methods.grep(/^page_/) 
+  pages = private_methods.grep(/^page_/)
   pages.each do |page|
     page_name = page.to_s.sub('page_', '')
     filename = File.expand_path("#$cur_dir/../#{page_name}.html")
