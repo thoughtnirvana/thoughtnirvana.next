@@ -75,8 +75,11 @@ def page_code
   scope.render('code.html.slim')
 end
 
-def gen_site(pretty=true)
+def gen_site(opts={})
+  pretty = opts[:pretty] || true
+  $prod = opts[:prod] || false
   Slim::Engine.set_default_options :pretty => pretty
+
   pages = private_methods.grep(/^page_/)
   pages.each do |page|
     page_name = page.to_s.sub('page_', '')
