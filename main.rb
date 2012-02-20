@@ -4,7 +4,7 @@ require 'yaml'
 require 'digest'
 
 class Env 
-  def initialize(scope)
+  def initialize(scope={})
     scope.each {|k, v| define_singleton_method(k, proc { v }) }
     @layout = Slim::Template.new('layout.html.slim') 
   end
@@ -49,7 +49,16 @@ def index
   tenets = YAML.load_file('data/tenets.yml')['tenets']
   services = YAML.load_file('data/services.yml')['services']
   scope = Env.new(tenets: tenets, services: services)
-  puts scope.render('index.html.slim')
+  scope.render('index.html.slim')
 end
 
-index
+def code
+  Env.new.render('code.html.slim')
+end
+
+if __FILE__ == $0
+  pages = [:index, :code]
+  pages.each do |page|
+    File.open("#{page.to_s}.html", 'w') {|f| f << send(page) }
+  end
+end
