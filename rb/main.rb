@@ -64,7 +64,7 @@ end
 
 
 def gen_site(opts={})
-  pretty = opts[:pretty] || true
+  pretty = opts[:pretty]
   $prod = opts[:prod] || false
   Slim::Engine.set_default_options :pretty => pretty
 
@@ -107,4 +107,4 @@ def page_contact
   scope.render('contact.html.slim')
 end
 
-gen_site if __FILE__ == $0
+gen_site(pretty: true) if __FILE__ == $0
