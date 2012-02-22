@@ -41,6 +41,14 @@ class Env
     EOF
   end
 
+  def img_tag(filename, opts)
+    opts = opts.reduce('') {|accum, (k, v)| "#{accum} #{k}=\"#{v}\"" }
+    filename = with_digest(filename) if $prod
+    <<-EOF
+    <img src="#{filename}" "#{opts}" />
+    EOF
+  end
+
   private
   def with_digest(filename)
     hexdigest = sha1_digest(filename)
