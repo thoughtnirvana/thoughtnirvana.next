@@ -1,6 +1,6 @@
 services:
     - header: Rails/Ruby
-      description: We have built all sorts of sites with Rails. It's an absolute pleasure to work with, not to mention it gets the job done really, really fast.
+      description: We have built all sorts of sites with Rails. It's an absolute pleasure to work with, not to mention it gets the job done fast - really, really fast.
 
     - header: Django/Python
       description: Django is the web framework for perfectionist with a deadline. That is an apt description; both for Django and us.
