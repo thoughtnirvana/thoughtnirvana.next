@@ -102,4 +102,9 @@ def page_who
   scope.render('who.html.slim')
 end
 
+def page_contact
+  scope = Env.new(page_name: 'contact')
+  scope.render('contact.html.slim')
+end
+
 gen_site if __FILE__ == $0
