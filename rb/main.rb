@@ -46,7 +46,7 @@ class Env
     hexdigest = sha1_digest(filename)
     ext = File.extname filename
     sans_ext = filename.sub(/#{ext}$/, '')
-    "#{sans_ext}.#{hexdigest}#{ext}"
+   "#{sans_ext}.#{hexdigest}#{ext}"
   end
 
   def sha1_digest(filename)

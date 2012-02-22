@@ -87,6 +87,39 @@ a {
 .how .container {
     ol { padding-bottom: 30px; }
 }
+.team {
+    margin: 30 auto 0;
+    width: @container-width;
+    overflow: hidden;
+    line-height: 1.5em;
+    .member-common {
+        width: 45%
+
+    }
+    .member-left {
+        .member-common;
+        float: left;
+    }
+    .member-right {
+        .member-common;
+        float: right;
+    }
+    img {
+        margin-right: 15px;
+    }
+    h3 {
+        color: @red-header;
+        font-size: 18px;
+    }
+    p.small {
+        color: #75b2dd;
+        margin-bottom: 5px;
+    }
+    p.handle {
+        float: left;
+        margin-right: 25px;
+    }
+}
 .who .container {
     p {
         font-size: 16px;
