@@ -62,6 +62,22 @@ def load_yaml(filename)
   YAML.load_file(File.join($cur_dir, filename))
 end
 
+
+def gen_site(opts={})
+  pretty = opts[:pretty] || true
+  $prod = opts[:prod] || false
+  Slim::Engine.set_default_options :pretty => pretty
+
+  pages = private_methods.grep(/^page_/)
+  pages.each do |page|
+    page_name = page.to_s.sub('page_', '')
+    filename = File.expand_path("#$cur_dir/../#{page_name}.html")
+    File.open(filename, 'w') {|f| f << send(page) }
+  end
+end
+
+# Page definitions.
+
 def page_index
   tenets = load_yaml('data/tenets.yml')['tenets']
   services = load_yaml('data/services.yml')['services']
@@ -81,17 +97,9 @@ def page_how
   scope.render('how.html.slim')
 end
 
-def gen_site(opts={})
-  pretty = opts[:pretty] || true
-  $prod = opts[:prod] || false
-  Slim::Engine.set_default_options :pretty => pretty
-
-  pages = private_methods.grep(/^page_/)
-  pages.each do |page|
-    page_name = page.to_s.sub('page_', '')
-    filename = File.expand_path("#$cur_dir/../#{page_name}.html")
-    File.open(filename, 'w') {|f| f << send(page) }
-  end
+def page_who
+  scope = Env.new(page_name: 'who')
+  scope.render('who.html.slim')
 end
 
 gen_site if __FILE__ == $0
