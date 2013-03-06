@@ -9,7 +9,7 @@ task :compile do |t|
     system "mkdir #{output_dir}"
   end
   gen_site(pretty: false, prod: true)
-  system "cp -r css img js *.html #{output_dir}"
+  system "cp -r rb/css rb/img rb/js rb/*.html #{output_dir}"
 end
 
 task :dev_server do |t|

@@ -4,17 +4,17 @@ require 'yaml'
 require 'digest'
 require 'ruby-debug'
 
-$cur_dir = File.dirname(__FILE__)
+$rb_dir = File.dirname(__FILE__)
 $prod = false
 
 class Env
   def initialize(scope={})
     scope.each {|k, v| define_singleton_method(k, proc { v }) }
-    @layout = Slim::Template.new(File.join($cur_dir, 'layout.html.slim'))
+    @layout = Slim::Template.new(File.join($rb_dir, 'layout.html.slim'))
   end
 
   def render(template, layout=true)
-    contents = Slim::Template.new(File.join($cur_dir, template)).render(self)
+    contents = Slim::Template.new(File.join($rb_dir, template)).render(self)
     return contents if not layout
     @layout.render(self) { contents }
   end
@@ -51,7 +51,7 @@ class Env
 
   private
   def with_digest(filename)
-    hexdigest = sha1_digest(filename)
+    hexdigest = sha1_digest(File.join($rb_dir, filename))
     ext = File.extname filename
     sans_ext = filename.sub(/#{ext}$/, '')
    "#{sans_ext}.#{hexdigest}#{ext}"
@@ -67,7 +67,7 @@ class Env
 end
 
 def load_yaml(filename)
-  YAML.load_file(File.join($cur_dir, filename))
+  YAML.load_file(File.join($rb_dir, filename))
 end
 
 
@@ -79,7 +79,7 @@ def gen_site(opts={})
   pages = private_methods.grep(/^page_/)
   pages.each do |page|
     page_name = page.to_s.sub('page_', '')
-    filename = File.expand_path("#$cur_dir/../#{page_name}.html")
+    filename = File.join($rb_dir, "#{page_name}.html")
     File.open(filename, 'w') {|f| f << send(page) }
   end
 end
