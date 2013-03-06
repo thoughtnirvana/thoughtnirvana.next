@@ -1,4 +1,5 @@
 require "#{File.dirname(__FILE__)}/rb/main"
+$cur_dir = File.dirname(__FILE__)
 
 task :compile do |t|
   output_dir = '_site'
@@ -9,4 +10,16 @@ task :compile do |t|
   end
   gen_site(pretty: false, prod: true)
   system "cp -r css img js *.html #{output_dir}"
+end
+
+task :dev_server do |t|
+  system "sudo service nginx stop"
+  system"sudo nginx -c #{$cur_dir}/nginx.dev.conf"
+  puts "nginx restarted"
+end
+
+task :server do |t|
+  system "sudo service nginx stop"
+  system"sudo nginx -c #{$cur_dir}/nginx.conf"
+  puts "nginx restarted"
 end
