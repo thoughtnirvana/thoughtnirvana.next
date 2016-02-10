@@ -2,11 +2,18 @@ doctype html
 html
   head
     meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
     title ThoughtNirvana
-    == less_tag 'css/base.less'
-    == js_tag 'js/less.js'
+    link href="css/bootstrap.min.css" rel="stylesheet/less" type="text/css"
+    link href="css/bootstrap-theme.min.css" rel="stylesheet/less" type="text/css"
+    script src="js/jquery.js" type="text/javascript"
+    script src="js/bootstrap.min.js" type="text/javascript"
+    / == less_tag 'css/base.less'
     link href="favicon.ico" rel="shortcut icon"
-    body class="#{page_name}"
+    == js_tag 'js/less.js'
+
+    body
       == render '_header.html.slim', false
       == yield
       == render '_footer.html.slim', false
