@@ -2,7 +2,7 @@
 require 'slim'
 require 'yaml'
 require 'digest'
-require 'ruby-debug'
+# require 'ruby-debug'
 
 $rb_dir = File.dirname(__FILE__)
 $prod = false
@@ -89,7 +89,9 @@ end
 def page_index
   tenets = load_yaml('data/tenets.yml')['tenets']
   services = load_yaml('data/services.yml')['services']
-  scope = Env.new(tenets: tenets, services: services, page_name: 'overview')
+  hows = load_yaml('data/hows.yml')['hows']
+  repos = load_yaml('data/repos.yml')['repos'].sort_by {|repo| repo['header'].downcase }
+  scope = Env.new(tenets: tenets, services: services, hows: hows, repos: repos, page_name: 'overview')
   scope.render('index.html.slim')
 end
 

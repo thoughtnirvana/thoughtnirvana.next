@@ -5,15 +5,23 @@ html
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1"
     title ThoughtNirvana
-    link href="css/bootstrap.min.css" rel="stylesheet/less" type="text/css"
-    link href="css/bootstrap-theme.min.css" rel="stylesheet/less" type="text/css"
-    script src="js/jquery.js" type="text/javascript"
-    script src="js/bootstrap.min.js" type="text/javascript"
     / == less_tag 'css/base.less'
-    link href="favicon.ico" rel="shortcut icon"
+    == less_tag 'css/bootstrap.css'
+    == less_tag 'css/bootstrap-theme.min.css'
+    == less_tag 'css/font-awesome.min.css'
+    == less_tag 'css/animations.css'
+    == less_tag 'css/tn.less'
     == js_tag 'js/less.js'
+    == js_tag 'js/jquery.js'
+    == js_tag 'js/bootstrap.min.js'
+    == js_tag 'js/tn.js'
 
+    link href="favicon.ico" rel="shortcut icon"
+
+    body data-spy="scroll" data-offset="0" data-target="#theMenu"
     body
       == render '_header.html.slim', false
       == yield
       == render '_footer.html.slim', false
+    == js_tag 'js/css3-animate-it.js'
+

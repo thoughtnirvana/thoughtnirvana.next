@@ -1,14 +1,39 @@
-.header
-  h1.left.brand
-    a href="/" ThoughtNirvana
-  ul.right.nav
-    li.overview
-      a href="/" OVERVIEW
-    li.how
-      a href="/how.html" HOW WE WORK
-    li.who
-      a href="/who.html" WHO WE ARE
-    li.code
-      a href="/code.html" CODE
-    li.contact
-      a href="/contact.html" CONTACT
+nav#theMenu.menu
+  .menu-wrap
+    h1.logo 
+      a href="index.html#home" ThoughtNirvana
+    / i.fa.fa-times.menu-close
+    a.smoothScroll href="#about" OVERVIEW
+    a.smoothScroll href="#portfolio" Our Clients
+    a.smoothScroll href="#slide2" HOW WE WORK
+    a.smoothScroll href="#slide3" WHO WE ARE
+    a.smoothScroll href="#slide4" CODE
+    a.smoothScroll href="#slide5" CONTACT
+    / <a href="#home" class="smoothScroll">Home</a>
+    / <a href="#about" class="smoothScroll">About</a>
+    / <a href="#portfolio" class="smoothScroll">Portfolio</a>
+    / <a href="#services" class="smoothScroll">Services</a>
+    / <a href="#contact" class="smoothScroll">Contact</a>
+    / <a href="#"><i class="fa fa-facebook"></i></a>
+    / <a href="#"><i class="fa fa-twitter"></i></a>
+    / <a href="#"><i class="fa fa-dribbble"></i></a>
+    / <a href="#"><i class="fa fa-envelope"></i></a>
+  #menuToggle
+    i.fa.fa-bars
+
+/!
+  #header.header
+    h1.left.brand
+      a href="/" ThoughtNirvana
+    nav#nav
+      ul.right.nav
+        li.overview
+          a.active href="#slide1" OVERVIEW
+        li.how
+          a href="#slide2" HOW WE WORK
+        li.who
+          a href="#slide3" WHO WE ARE
+        li.code
+          a href="#slide4" CODE
+        li.contact
+          a href="#slide5" CONTACT
