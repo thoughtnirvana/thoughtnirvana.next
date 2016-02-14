@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Cabin+Sketch);
 @container-width: 940px;
 
 .menu {
@@ -303,9 +304,116 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
 
 }
 
-.quote-container {
-  margin-top: 50px;
-  position: relative;
+/* Sticky Notes CSS start */
+
+#stickyNotes {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .quote-container1 {
+    margin-top: 0%;
+  }
+
+  .quote-container2 {
+    margin-top: -3%;
+  }
+
+  .quote-container3 {
+    margin-top: 3%;
+  }
+
+  .quote-container4 {
+    margin-top: -4%;
+  }
+
+  .quote-container5 {
+    margin-top: -4%;
+  }
+
+  .tnHeader {
+    margin-top: 0%;
+  }
+
+  .stickyNoteGroup1 {
+    margin-top: -5%;
+  }
+
+  .stickyNoteGroup2 {
+    margin-top: 40%;
+  }
+
+  #stickyNotes {
+    width: 100%;
+    margin-top: -20%;
+  }
+}
+
+
+
+/*.quote-container1 {
+  margin-top: 0%;
+}*/
+
+.yellow1 {
+  background: #eae672;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+/*.quote-container2 {
+  margin-top: -3%;
+}*/
+
+.yellow2 {
+  background: #e75050;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+/*.quote-container3 {
+  margin-top: 3%;
+}*/
+
+.yellow3 {
+  background: #748cf1;
+  -webkit-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  -o-transform: rotate(4deg);
+  -ms-transform: rotate(4deg);
+  transform: rotate(4deg);
+}
+
+/*.quote-container4 {
+  margin-top: -4%;
+}*/
+
+.yellow4 {
+  background: #e75050;
+  -webkit-transform: rotate(6deg);
+  -moz-transform: rotate(6deg);
+  -o-transform: rotate(6deg);
+  -ms-transform: rotate(6deg);
+  transform: rotate(6deg);
+}
+
+/*.quote-container5 {
+  margin-top: -4%;
+}*/
+
+.yellow5 {
+  background: #eae672;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
 }
 
 .note {
@@ -314,8 +422,8 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   width: 300px;
   margin: 0 auto;
   padding: 20px;
-  font-family: Satisfy;
-  font-size: 30px;
+  font-family: "Cabin Sketch";
+  font-size: 15px;
   box-shadow: 0 10px 10px 2px rgba(0,0,0,0.3);
 }
 
@@ -323,15 +431,6 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   display: block;
   margin: 40px 0 0 0;
   text-align: right;
-}
-
-.yellow {
-  background: #eae672;
-  -webkit-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
-  -o-transform: rotate(2deg);
-  -ms-transform: rotate(2deg);
-  transform: rotate(2deg);
 }
 
 .pin {
@@ -360,3 +459,17 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   top: -10px;
   width: 12px;
 }
+
+@media only screen and (max-width: 640px) {
+  h1 { font-size: 20px !important; }
+  h2 { font-size: 15px !important; }
+  h3 { font-size: 10px !important; }
+  .note {
+    font-size: 4px;
+    width: 75px;
+  }
+  #stickyNotes {
+    display: none;
+  }
+}
+/* Sticky Notes CSS END */

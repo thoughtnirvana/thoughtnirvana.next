@@ -1,20 +1,30 @@
-/ LANDING PAGE START
+/ ******LANDING PAGE START****** /
 
 section#home name="home"
 #headerwrap
-  .quote-container
-    i.pin
-    blockquote.note.yellow We can't solve problems by using the same kind of thinking we used when we created them.
-      cite.author Albert Einstein
-  .container
+  .container.tnHeader
     .row
       .animatedParent.animateOnce
         h1.animated.fadeInDown ThoughtNirvana
         h3.animated.fadeInUp We create magic on and off the web.
+  #stickyNotes.container
+    .row.animatedParent.animateOnce
+      - countGroup = 1
+      - count = 1
+      - tenets.each_slice(3) do |tenet_group|
+        div[class="stickyNoteGroup#{countGroup}"]
+          - tenet_group.each do |tenet|
+            div[class="quote-container#{count} animated fadeInDown delay-250 col-xs-6 col-sm-4 col-md-4" data-id="#{count}"]
+              i.pin
+              div[class="blockquote note yellow#{count}"]
+                strong = tenet["header"]
+                p = tenet["description"]
+              - count = count + 1
+        - countGroup = countGroup + 1
 
-/ LANDING PAGE END
+/ ******LANDING PAGE END****** /
 
-/ OVERVIEW START
+/ ******OVERVIEW START****** /
 
 section#overview.color-dark.bg-gray name="overview"
 .container.marginbot-50
@@ -22,69 +32,25 @@ section#overview.color-dark.bg-gray name="overview"
     .col-lg-8.col-lg-offset-2
       .animatedParent.animateOnce data-sequence='500'
         .section-heading.text-center
-          h2.animated.bounceInDown.h-bold data-id='1' THOUGHTNIRVANA IS A SOFTWARE DEVELOPMENT SHOP 
-          h4.animated.bounceInDown.h-bold data-id='2' BASED OUT OF THE BEAUTIFUL CITY OF BANGALORE
+          h2.animated.fadeInDownShort.h-bold data-id='1' THOUGHTNIRVANA IS A SOFTWARE DEVELOPMENT SHOP
+          h4.animated.fadeInDownShort.h-bold data-id='2' BASED OUT OF THE BEAUTIFUL CITY OF BANGALORE
 
-.text-center
-  .container
-    .row.animatedParent
-      - services.each_slice(3) do |service_group|
-        - service_group.each do |service|
-          .col-xs-6.col-sm-4.col-md-4
-            .animated.fadeInDownShort.slow
-              .service-box
-                .topic
-                  h3 = service["header"]
-                  p = service["description"]
-  /!
-    #carousel-example.carousel.slide data-ride="carousel"
-      .row
-          .col-xs-offset-3.col-xs-6
-              .carousel-inner
-                - count = 0
-                - for tenet in tenets
-                  - if count == 0
-                    .item.active
-                      .carousel-content
-                          div
-                              h3 = tenet["header"]
-                              p = tenet["description"]
-
-                  - else
-                    .item
-                      .carousel-content
-                          div
-                              h3 = tenet["header"]
-                              p = tenet["description"]
-                  - count = 1
-      a.left.carousel-control href="#carousel-example" role="button" data-slide="prev"
-        i.fa.fa-angle-left
-      a.right.carousel-control href="#carousel-example" role="button" data-slide="next"
-        i.fa.fa-angle-right
-
-  /!
+section#skills name="skills"
+  whatWeCanDo.text-center
     .container
       .row
-        .col-lg-4.name
-          h3 ThoughtNirvana is a software development shop
-          br
-          h4 Based out of the beautiful city of Bangalore 
-          .name-zig
-          .tenets
-            dl
-              - for tenet in tenets
-                dt = tenet["header"]
-                dd = tenet["description"]
-          / img class="img-responsive" src="assets/img/pic.png"
-          / p DANIEL PRATT
-          / .name-label
-        .col-lg-8.name-desc
-          - services.each_slice(3) do |service_group|
-            .service-box.animated.rotateInDownLeft
-              - service_group.each do |service|
-                .topic
-                  h3 = service["header"]
-                  p = service["description"]
+        h2.marginbot-50 WHAT WE CAN DO FOR YOU
+        - services.each_slice(3) do |service_group|
+          - service_group.each do |service|
+            .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
+                div
+                  .service-box
+                    .topic
+                      h3 = service["header"]
+                      p = service["description"]
+
+
+/ ******OVERVIEW END****** /
 
 .sep.about data-stellar-background-ratio="0.5"
 
