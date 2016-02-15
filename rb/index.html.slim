@@ -40,7 +40,7 @@ section#skills name="skills"
     .container
       .row
         h4
-          strong WHAT WE CAN DO FOR YOU
+          strong WHAT WE DO
         .divider-header
         .animatedParent.animateOnce
           - services.each_slice(3) do |service_group|
@@ -65,9 +65,9 @@ section#client name="client"
   .container
     .row
       h3
-        strong WE LOVED WORKING WITH THESE PEOPLE
+        strong WE LOVED DOING IT FOR THESE PEOPLE
       .divider-header
-      div.clientList.animatedParent
+      div.clientList.animatedParent.animateOnce
         - clients.each_slice(3) do |client_group|
           .row
             - client_group.each do |client|
@@ -83,7 +83,7 @@ section#testimonial name="testimonial"
   .container
     .row
       h3
-        strong AND THESE PEOPLE LOVED WORKING WITH US
+        strong AND THESE PEOPLE LOVED GETTING IT DONE BY US
       .divider-header
 
 
@@ -97,7 +97,7 @@ section#how name="how"
 #howwrap.text-center.margintop-50
   .container
     .row
-      h1 HOW WE WORK
+      h1 HOW WE DO
       .divider-header
       h3 The ThoughtNirvana way
       p.custom-font Software for the humans, by the humans
@@ -115,6 +115,43 @@ section#how name="how"
 
 
 / ****** HOW WE DO END ****** /
+
+/ ****** WHO WE ARE START ****** /
+
+section#who name="who"
+#whowrap.margintop-50
+  .container
+    .row
+      h1 WHO WE ARE
+      .divider-header.marginbot-50
+
+    .row
+      .col-lg-4.name
+        img.img-responsive src="img/ujjawal1.jpg"
+        p UJJAWAL ASTHANA
+        / .name-label
+      .col-lg-4.name-desc
+        h3 The DNA of ThoughtNirvana
+        p We are a different kind of development shop
+        p Software development is more than a business for us
+        p We have been in business since 2010.
+      .col-lg-4.name-desc
+        p The founders have been programming since 2003 for personal and commercial projects with varying degree of success. We have worked on web and non web based softwares, big data systems, embedded video devices, plethora of languages and platforms.
+        p But most importantly, we have been shipping sofwarre of all size, writinng lots of code, and saving tons of money for the clients.
+        p The founders have worked as consultants before founding ThoughtNirvana. We have shipped software for personal and commercial purpose, and we offer practical end to end development experience.
+    .row
+      .col-lg-4.name
+        img.img-responsive src="img/rahul1.jpg"
+        p RAHUL KUMAR
+        / .name-label
+      .col-lg-4.name-desc
+        p We understand the pulse of software development, and based on our development skills and experiece, we work hard to provide you with a pleasant experience and on-time delivery.
+        p We are an end to end development company - all development and design happens in-house and is done by a closely-knit team. As a result, you get software which is highly cohesive and consistent.
+      .col-lg-4.name-desc
+        p We are a people's company. We believe software development is a social activity which requires talented individuals working towards a common goal. It isn't something that can be done by interchangeable resources.
+        p We believe software has made the world a better place, and we take great pride in our craft.
+
+/ ****** WHO WE ARE END ****** /
 
 
 
