@@ -26,7 +26,7 @@ section#home name="home"
 
 / ******OVERVIEW START****** /
 
-section#overview.color-dark.bg-gray name="overview"
+section#overview name="overview"
 .container.marginbot-50
   .row
     .col-lg-8.col-lg-offset-2
@@ -36,99 +36,87 @@ section#overview.color-dark.bg-gray name="overview"
           h4.animated.fadeInDownShort.h-bold data-id='2' BASED OUT OF THE BEAUTIFUL CITY OF BANGALORE
 
 section#skills name="skills"
-  whatWeCanDo.text-center
+  .whatWeCanDo.text-center
     .container
       .row
-        h2.marginbot-50 WHAT WE CAN DO FOR YOU
-        - services.each_slice(3) do |service_group|
-          - service_group.each do |service|
-            .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-                div
-                  .service-box
-                    .topic
-                      h3 = service["header"]
-                      p = service["description"]
+        h4
+          strong WHAT WE CAN DO FOR YOU
+        .divider-header
+        .animatedParent.animateOnce
+          - services.each_slice(3) do |service_group|
+            - service_group.each do |service|
+              .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
+                  div
+                    .service-box.animated.fadeIn
+                      .topic
+                        h3 = service["header"]
+                        p = service["description"]
 
 
 / ******OVERVIEW END****** /
 
-.sep.about data-stellar-background-ratio="0.5"
 
-section#portfolio name="portfolio"
-#portfoliowrap
+.sep.overviewsep data-stellar-background-ratio="0.5"
+
+
+/ ******OUR CLIENTS START****** /
+section#client name="client"
+#clientwrap.text-center
   .container
     .row
-      h1 SOME OF OUR LATEST WORKS
-      .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-        #project-wrapper
-                    .project
-                        .photo-wrapper
-                            .photo
-                              / a.fancybox href="assets/img/portfolio/port04.jpg"
-                                / img.img-responsive src="assets/img/portfolio/port04.jpg" alt=""
-                            .overlay
-      
-      .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-        .project-wrapper
-                    .project
-                        .photo-wrapper
-                            .photo
-                              / a.fancybox href="assets/img/portfolio/port05.jpg"
-                                / img.img-responsive src="assets/img/portfolio/port05.jpg" alt=""
-                            .overlay
-      
-      .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-        .project-wrapper
-                    .project
-                        .photo-wrapper
-                            .photo
-                              / a.fancybox href="assets/img/portfolio/port06.jpg"
-                                / img.img-responsive src="assets/img/portfolio/port06.jpg" alt=""
-                            .overlay
+      h3
+        strong WE LOVED WORKING WITH THESE PEOPLE
+      .divider-header
+      div.clientList.animatedParent
+        - clients.each_slice(3) do |client_group|
+          .row
+            - client_group.each do |client|
+              div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12 #{client['name']}"]
+                .client-wrapper.animated.bounceIn
+                  .client
+                    .logo-wrapper
+                      .logo
+                        img.img-responsive src="img/#{client['logo']}"
 
-    .row.mt
-      .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-        .project-wrapper
-                    .project
-                        .photo-wrapper
-                            .photo
-                              / a.fancybox href="assets/img/portfolio/port01.jpg"
-                                / img.img-responsive src="assets/img/portfolio/port01.jpg" alt=""
-                            .overlay
-      
-      .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-        .project-wrapper
-                    .project
-                        .photo-wrapper
-                            .photo
-                              / a.fancybox href="assets/img/portfolio/port02.jpg"
-                                / img.img-responsive src="assets/img/portfolio/port02.jpg" alt=""
-                            .overlay
-      
-      .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-        .project-wrapper
-                    .project
-                        .photo-wrapper
-                            .photo
-                              / a.fancybox href="assets/img/portfolio/port03.jpg"
-                                / img.img-responsive src="assets/img/portfolio/port03.jpg" alt=""
-                            .overlay
-
+section#testimonial name="testimonial"
+#testimonialwrap.text-center
   .container
-    .row.mt.centered
-      h1 HOW WE WORK
-      h1.x-large The ThoughtNirvana way 
-      p.large Software for the humans, by the humans
-      p.large We believe software is a facilitator
-      p.large We build software that obeys you, not the other way round
-      - hows.each do |how|
-        .col-lg-4.proc
-          i.fa.fa-coffee
-          h3 = how["header"]
-          p.small = how["subheader"]
-          p = how["description"]
+    .row
+      h3
+        strong AND THESE PEOPLE LOVED WORKING WITH US
+      .divider-header
 
-.sep.portfolio data-stellar-background-ratio="0.5"
+
+/ ******OUR CLIENTS END****** /
+
+.sep.clientssep data-stellar-background-ratio="0.5"
+
+/ ****** HOW WE DO START ****** /
+
+section#how name="how"
+#howwrap.text-center.margintop-50
+  .container
+    .row
+      h1 HOW WE WORK
+      .divider-header
+      h3 The ThoughtNirvana way
+      p.custom-font Software for the humans, by the humans
+      p.custom-font We believe software is a facilitator
+      p.custom-font We build software that obeys you, not the other way round
+      .marginbot-50
+      - hows.each_slice(3) do |how_group|
+        .row
+        .marginbot-50
+          - how_group.each do |how|
+            div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12 how #{how['header']}"]
+              h3 = how["header"]
+              strong = how["subheader"]
+              p = how["description"]
+
+
+/ ****** HOW WE DO END ****** /
+
+
 
 /!
   section

@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin+Sketch);
+@import url(https://fonts.googleapis.com/css?family=Six+Caps);
+@import url(https://fonts.googleapis.com/css?family=Sail);
 @container-width: 940px;
 
 .menu {
@@ -156,7 +158,7 @@
 
 
 #headerwrap {
-  background: url(../img/18.jpg) no-repeat center top;
+  background: url(../img/9.jpg) no-repeat center top;
   margin-top: 0px;
   padding-top:120px;
   text-align:center;
@@ -193,6 +195,7 @@
 }
 
 .marginbot-50{margin-bottom:50px !important;}
+.margintop-50{margin-top:50px !important;}
 
 h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   font-weight: 600;
@@ -228,7 +231,7 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   width: 40px;
   height: 2px;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
 }
 
 .name {
@@ -265,7 +268,7 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   font-weight: 300;
 }
 
-/* Separator About - Parallax Section */
+/* Separators */
 .sep {
   background-attachment: fixed;
   background-position: 50% 0;
@@ -273,7 +276,12 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   height: 450px;
   position: relative;
 }
-.about {
+
+.overviewsep {
+  background-image: url(../img/6.jpg);
+}
+
+.clientssep {
   background-image: url(../img/6.jpg);
 }
 
@@ -302,6 +310,15 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
         margin: auto 10px;
     }
 
+}
+
+.divider-header {
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background: #666;
 }
 
 /* Sticky Notes CSS start */
@@ -460,6 +477,84 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   width: 12px;
 }
 
+/* Sticky Notes CSS END */
+
+/* Client Section Start */
+
+#clientwrap {
+  display: block;
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  img {
+    height: auto;
+    width: auto;
+    filter: gray; /* IE6-9 */
+    filter: grayscale(100%); /* Microsoft Edge and Firefox 35+ */
+    -webkit-filter: grayscale(100%); /* Google Chrome, Safari 6+ & Opera 15+ */
+  }
+  .clientList {
+    margin-left: 11%;
+  }
+  .mapunity, .yahoo, .feefighters {
+    margin-top: 3%;
+  }
+  .idt {
+    margin-top: 5%;
+  }
+}
+
+.desc {
+  margin-top: 25px;
+}
+
+/* Client Section End */
+
+/* How Section Start */
+
+#howwrap {
+  display: block;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .how {
+    position:relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: solid 2px transparent;
+    height: 350px;
+  }    
+  .how:before {
+    font-family: FontAwesome;
+    font-size: 30px;
+    font-weight: bold
+  }
+  .how:hover {
+    background-color: #eee;
+    border-bottom: solid 2px #2f2f2f;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin-top: -20px;
+  }
+  .Technology:before {
+    content: "\f109";
+  }
+  .Discussion:before {
+    content: "\f0fc";
+  }
+  .Development:before {
+    content: "\f0ae";
+  }
+  .Deployment:before {
+    content: "\f0ad";
+  }
+  .Support:before {
+    content: "\f1cd";
+  }
+}
+
+/* How Section End */
+
 @media only screen and (max-width: 640px) {
   h1 { font-size: 20px !important; }
   h2 { font-size: 15px !important; }
@@ -472,4 +567,8 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
     display: none;
   }
 }
-/* Sticky Notes CSS END */
+
+.custom-font {
+  font-family: 'Sail', cursive;
+  font-size: 18px;
+}

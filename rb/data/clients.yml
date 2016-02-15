@@ -1,0 +1,30 @@
+clients:
+    - name: idt
+      logo: idt.png
+
+    - name: earbits
+      logo: earbits.png
+
+    - name: feefighters
+      logo: feefighters.png
+
+    - name: satrails
+      logo: satrails.png
+
+    - name: yahoo
+      logo: yahoo.png
+
+    - name: mapunity
+      logo: mapunity.jpg
+
+
+
+
+
+
+
+    # - name: DineWithMe
+
+    # - name: Appio
+
+    # - name: BT
