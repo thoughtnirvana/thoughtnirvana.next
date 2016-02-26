@@ -14,6 +14,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nova+Mono);
 */
 @import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
 
 @container-width: 940px;
 @gray-lighter: #969798;
@@ -21,12 +22,17 @@
 
 
 body {
-  font-size: 16px;
-  font-family: "Lato", Helvetica, sans-serif;
+  max-width: 100%;
+  font-size: 17px;
+  font-family: "Josefin Slab", Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   background: #fff; /* Old browsers */
   color: @black-light;
+}
+
+*::selection {
+  background: #00ffcc;
 }
 
 .menu {
@@ -244,7 +250,7 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
 }
 
 .section-heading h2 {
-  font-size: 24px;
+  font-size: 23px;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 10px;
@@ -254,14 +260,6 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   font-weight: 300;
   font-size: 20px;
   line-height: 1.6em;
-}
-
-.divider-header {
-  display: block;
-  width: 40px;
-  height: 2px;
-  margin: 0 auto;
-  margin-bottom: 35px;
 }
 
 .name {
@@ -308,43 +306,48 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
 }
 
 .overviewsep {
-  background-image: url(../img/7.jpg);
+  background-image: url(../img/26.jpg);
 }
 
 .clientssep {
-  background-image: url(../img/7.jpg);
+  background-image: url(../img/26.jpg);
 }
 
-.topic-group {
-    margin: 20px auto;
-    width: @container-width;
-    overflow: hidden;
-    text-align: center;
-}
 
-.topic {
-    float: left;
+.topic, .repo {
+    /*float: left;*/
     margin-left: 47px;
-    width: 250px;
-    height: 200px;
+    /*width: 250px;*/
     border-bottom: 2px solid #f7f7f7;
     background-color:  #fff;
     h3 {
         color: #d35357;
-        font-size: 22px;
-        margin: 10px auto;
+        font-size: 45px;
+        /*margin: 10px auto;*/
     }
     p {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.5em;
-        margin: auto 10px;
+        /*margin: auto 10px;*/
     }
-
 }
 
+.topic {
+  height: 175px;
+}
+
+.repo {
+  height: 165px;
+}
+
+.service-box {
+  :hover {
+     background-color: #eee;
+  }
+}
 .divider-header {
   display: block;
-  width: 40px;
+  width: 100px;
   height: 2px;
   margin: 0 auto;
   margin-bottom: 10px;
@@ -594,9 +597,24 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
     text-align: center;
   }
 
-  img {
-    height: 240px;
-    width: 250px;
+  .foundingImg {
+    height: 170px;
+    width: 190px;
+  }
+  span {
+    display: block;
+    font-weight: bold;
+  }
+  .talkImg {
+    height: 500px;
+  }
+  .programmer1 {
+    float: right;
+    text-align: right;
+  }
+  .programmer2 {
+    float: left;
+    text-align: left;
   }
 }
 
@@ -638,9 +656,9 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
 /* Who Section End */
 
 @media only screen and (max-width: 640px) {
-  h1 { font-size: 20px !important; }
-  h2 { font-size: 15px !important; }
-  h3 { font-size: 10px !important; }
+  h1 { font-size: 30px !important; }
+  h2 { font-size: 20px !important; }
+  h3 { font-size: 15px !important; }
   .note {
     font-size: 4px;
     width: 75px;
@@ -648,9 +666,17 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   #stickyNotes {
     display: none;
   }
+  #headerwrap {
+    min-height: 400px;
+  }
 }
 
 .custom-font {
   font-family: 'Sail', cursive;
   font-size: 18px;
+}
+
+.x-large {
+  font-size: 40px;
+  margin-bottom: 8px;
 }

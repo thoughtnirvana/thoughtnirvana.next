@@ -8,20 +8,20 @@ services:
     - header: Flask/Sinatra
       description: API development might not need the whole baggage of Rails and Django. Also, Flask and Sinatra are pretty sweet.
 
-    - header: Clojure
-      description: We believe Clojure unifies cutting edge research with practicality. Lisp, STM, JVM - what else can one ask for. 
-
     - header: Javascript
       description: We are amused when people consider Javascript a toy language, considering that applications like GMail run on it.
-
-    - header: Architecture
-      description: We have designed and deployed systems of all size. CMS, Social network, CRM - been there, done it all.
-
-    - header: Security
-      description: Web is a big, bad place. We write elegant, secure code and also conduct security audits.
 
     - header: Process
       description: Sometimes a little re-adjustment can do wonders. We can help you rediscover joy of software development. 
 
     - header: Consulting
       description: Need help with legacy systems; or learn about MongoDB, Redis, Clojure? Give us a shout.
+
+    - header: Clojure
+      description: We believe Clojure unifies cutting edge research with practicality. Lisp, STM, JVM - what else can one ask for. 
+
+    - header: Architecture
+      description: We have designed and deployed systems of all size. CMS, Social network, CRM - been there, done it all.
+
+    - header: Security
+      description: Web is a big, bad place. We write elegant, secure code and also conduct security audits.
