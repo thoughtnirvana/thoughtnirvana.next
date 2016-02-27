@@ -3,11 +3,14 @@
 section#home name="home"
 #headerwrap
   #headerOverlay
-    .container.tnHeader
+    .container.mainheader
       .row
-        .animatedParent.animateOnce
-          h1.animated.fadeInDown ThoughtNirvana
-          h3.animated.fadeInUp We create magic on and off the web.
+        h1.animated.fadeInDown ThoughtNirvana
+        h2 We Create Magic On And Off The Web
+    /!
+      .container.subheader
+        .row
+          <h2 class=> We create magic on and off the web. Not a penny more, not a penny less. <span>We build software for your needs, which is often different from what you initially want. We work with you to transform "want" into "need" into "working software". </span>Honesty and integrity matters. <span>We appreciate you chose to work with us - we work very hard to ensure quality, honesty, transparency and clarity. </span>Talk is cheap, show me the code. <span>We assure that measurable progress is being delivered to you starting day 1. </span>The only constant is change. <span>We know and respect this and work with you to let the software evolve. </span>Straight from the gut. <span>We don't play buzzword bingo.</span></h2>
     #stickyNotes.container
       .row.animatedParent.animateOnce
         - countGroup = 1
@@ -43,19 +46,17 @@ section#home name="home"
         .row
           h3 WHAT WE DO
           .divider-header
-        .row.text-left
+        .row
           .animatedParent.animateOnce
             - serviceCount = 1
-            - services.each_slice(4) do |service_group|
+            - services.each_slice(3) do |service_group|
               - service_group.each do |service|
                 .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-                    div
-                      .service-box.animated.fadeIn
-                        .topic
-                          .topic-header
-                            h3 = service["header"]
-                          .topic-content
-                            p = service["description"]
+                  .service-box.animated.fadeIn
+                    div[class="topic #{service['class']}"]
+                      h3 = service["header"]
+                      h3 = service["header2"]
+                      p = service["description"]
 
 / ******OVERVIEW END****** /
 
@@ -69,17 +70,14 @@ section#client name="client"
   .container
     .row
       h3 WHO WE HAVE DONE IT FOR
-      .divider-header
+      .divider-header.marginbot-50
       div.clientList.animatedParent.animateOnce
         - clients.each_slice(3) do |client_group|
           .row
             - client_group.each do |client|
-              div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12 #{client['name']}"]
-                .client-wrapper.animated.bounceIn
-                  .client
-                    .logo-wrapper
-                      .logo
-                        img.img-responsive src="img/#{client['logo']}"
+              div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logowrap #{client['name']}"]
+                div[class="logo"]
+                  img.img-responsive src="img/Logos/#{client['logo']}"
 
 section#testimonial name="testimonial"
 #testimonialwrap.text-center

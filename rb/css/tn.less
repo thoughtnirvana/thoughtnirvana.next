@@ -28,7 +28,7 @@ body {
   font-style: normal;
   font-weight: normal;
   background: #fff; /* Old browsers */
-  color: @black-light;
+  color: #482723;
 }
 
 *::selection {
@@ -192,12 +192,14 @@ body {
 #headerwrap {
   background: url(../img/9.jpg) no-repeat center top;
   margin-top: 0px;
-  padding-top:120px;
+  /*padding-top:120px;*/
+  padding-top:20px;
   text-align:center;
   background-attachment: relative;
   background-position: center center;
   min-height: 700px;
   width: 100%;
+  color:black;
   
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
@@ -208,20 +210,43 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-  h3 {
-    color: @black-light;
+  .subheader {
+    width: 50%;
+    text-align:justify;
+    h2 {
+      font-size: 35px;
+      /*color: #ae1f23;*/
+      /*color: #AE961F;*/
+      /*color: #ae1f23;*/
+      font-weight: bold;
+    }
+    span {
+      font-size: 18px;
+      font-weight: bold;
+      /*color: rgb(255, 107, 0);*/
+      /*color: #ffffff;*/
+      color: #482723;
+      font-weight: bold;
+    }
   }
 }
 
 #headerwrap h1 {
-  color:#ffffff;
-  margin-top: 90px;
-  padding-bottom: 30px;
+  margin-top: 0px;
+  padding-top: 200px;
   letter-spacing: 8px;
   font-size: 100px;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000;
+  color: #ffffff;
+/*  -webkit-stroke-width: 5.3px;
+  -webkit-stroke-color: #FFFFFF;
+  -webkit-fill-color: #FFFFFF;
+  text-shadow: 1px 0px 20px #f85c37;*/
+  /*-webkit-transition: width 0.3s;*/ /*Safari & Chrome*/
+  /*transition: width 0.3s;*/
+  /*-moz-transition: width 0.3s;*/ /* Firefox 4 */
+  /*-o-transition: width 0.3s; */
 }
 
 /* Overview Wrap & Conf */
@@ -315,36 +340,32 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
 
 
 .topic, .repo {
-    /*float: left;*/
-    margin-left: 47px;
-    /*width: 250px;*/
-    border-bottom: 2px solid #f7f7f7;
-    background-color:  #fff;
+    margin-left: 15px;
+    width: 350px;
+    border: 2px solid #f7f7f7;
     h3 {
-        color: #d35357;
-        font-size: 45px;
-        /*margin: 10px auto;*/
+      /*color: #ae1f23;*/
+      font-size: 60px;
     }
     p {
-        font-size: 18px;
-        line-height: 1.5em;
-        /*margin: auto 10px;*/
+      font-size: 17px;
+      line-height: 1.5em;
+      padding-top: 20px;
     }
 }
 
-.topic {
-  height: 175px;
+.second, .third {
+  height: 220px;
+}
+
+.first {
+  height: 300px;
 }
 
 .repo {
   height: 165px;
 }
 
-.service-box {
-  :hover {
-     background-color: #eee;
-  }
-}
 .divider-header {
   display: block;
   width: 100px;
@@ -382,7 +403,7 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   }
 
   .tnHeader {
-    margin-top: 0%;
+    margin-top: -10%;
   }
 
   .stickyNoteGroup1 {
@@ -519,21 +540,37 @@ h1.h-bold,h2.h-bold,h3.h-bold ,h4.h-bold ,h5.h-bold ,h6.h-bold  {
   margin-top: 80px;
   margin-bottom: 80px;
 
-  img {
-    height: auto;
-    width: auto;
-    filter: gray; /* IE6-9 */
-    filter: grayscale(100%); /* Microsoft Edge and Firefox 35+ */
-    -webkit-filter: grayscale(100%); /* Google Chrome, Safari 6+ & Opera 15+ */
-  }
   .clientList {
-    margin-left: 11%;
-  }
-  .mapunity, .yahoo, .feefighters {
-    margin-top: 3%;
-  }
-  .idt {
-    margin-top: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    .logowrap {
+      border: 1px solid #d7d5cc;
+      padding-left: 45px;
+      padding-top: 35px;
+      padding-bottom: 35px;
+    }
+    .idt {
+      border-top:0px;
+      border-left: 0px;
+    }
+    .earbits {
+      border-top: 0px;
+    }
+    .feefighters {
+      border-right: 0px;
+      border-top: 0px;
+    }
+    .satrails {
+      border-left: 0px;
+      border-bottom: 0px;
+    }
+    .yahoo {
+      border-bottom: 0px;
+    }
+    .mapunity {
+      border-right: 0px;
+      border-bottom: 0px;
+    }
   }
 }
 

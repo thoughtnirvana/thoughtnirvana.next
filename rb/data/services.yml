@@ -1,27 +1,39 @@
 services:
-    - header: Rails/Ruby
+    - header: Rails
+      header2: Ruby
+      class: first
       description: We have built all sorts of sites with Rails. It's an absolute pleasure to work with, not to mention it gets the job done fast - really, really fast.
 
-    - header: Django/Python
+    - header: Django
+      header2: Python
+      class: first
       description: Django is the web framework for perfectionist with a deadline. That is an apt description; both for Django and us.
 
-    - header: Flask/Sinatra
+    - header: Flask
+      header2: Sinatra
+      class: first
       description: API development might not need the whole baggage of Rails and Django. Also, Flask and Sinatra are pretty sweet.
 
     - header: Javascript
+      class: second
       description: We are amused when people consider Javascript a toy language, considering that applications like GMail run on it.
 
     - header: Process
+      class: second
       description: Sometimes a little re-adjustment can do wonders. We can help you rediscover joy of software development. 
 
     - header: Consulting
+      class: second
       description: Need help with legacy systems; or learn about MongoDB, Redis, Clojure? Give us a shout.
 
     - header: Clojure
+      class: third
       description: We believe Clojure unifies cutting edge research with practicality. Lisp, STM, JVM - what else can one ask for. 
 
     - header: Architecture
+      class: third
       description: We have designed and deployed systems of all size. CMS, Social network, CRM - been there, done it all.
 
     - header: Security
+      class: third
       description: Web is a big, bad place. We write elegant, secure code and also conduct security audits.
