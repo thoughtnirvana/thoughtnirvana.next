@@ -1,27 +1,41 @@
 doctype html
-html
+html lang="en"
   head
-    meta charset="utf-8"
+    meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge"
-    meta name="viewport" content="width=device-width, initial-scale=1"
-    title ThoughtNirvana
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    title ThoughtNirvana: Ruby on Rails, Python, Flash, Sinatra, Javascript Developers
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+    / link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"
+    / meta name="viewport" content="width=device-width, initial-scale=1.0"
     / == less_tag 'css/base.less'
-    == less_tag 'css/bootstrap.css'
-    == less_tag 'css/bootstrap-theme.min.css'
+    / == less_tag 'css/bootstrap.css'
+    / == less_tag 'css/bootstrap-theme.min.css'
     == less_tag 'css/font-awesome.min.css'
-    == less_tag 'css/animations.css'
-    == less_tag 'css/tn.less'
-    == js_tag 'js/less.js'
-    == js_tag 'js/jquery.js'
-    == js_tag 'js/bootstrap.min.js'
-    == js_tag 'js/tn.js'
+    / == less_tag 'css/animations.css'
+    == less_tag 'css/materialize.css'
+    / == less_tag 'css/tn.less'
+    == less_tag 'css/tn1.less'
+    / == less_tag 'css/style.css'
+    / == js_tag 'js/less.js'
+    / == js_tag 'js/jquery.js'
+    / == js_tag 'js/materialize.min.js'
+    / == js_tag 'js/bootstrap.min.js'
+    / == js_tag 'js/tn.js'
+    / link href='https://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'
 
     link href="favicon.ico" rel="shortcut icon"
 
     body data-spy="scroll" data-offset="0" data-target="#theMenu"
     body
       == render '_header.html.slim', false
-      == yield
+      .mainContainer
+        == yield
       == render '_footer.html.slim', false
-    == js_tag 'js/css3-animate-it.js'
+      == js_tag 'js/less.js'
+      == js_tag 'js/jquery.js'
+      == js_tag 'js/materialize.js'
+      == js_tag 'js/tn1.js'
+      / == js_tag 'js/css3-animate-it.js'
+      / == js_tag 'js/jquery.transit.min.js'
 

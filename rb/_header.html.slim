@@ -1,25 +1,77 @@
-nav#theMenu.menu
-  .menu-wrap
-    h1.logo 
-      a href="index.html#home" ThoughtNirvana
-    / i.fa.fa-times.menu-close
-    a.smoothScroll href="#about" OVERVIEW
-    a.smoothScroll href="#portfolio" Our Clients
-    a.smoothScroll href="#slide2" HOW WE WORK
-    a.smoothScroll href="#slide3" WHO WE ARE
-    a.smoothScroll href="#slide4" CODE
-    a.smoothScroll href="#slide5" CONTACT
-    / <a href="#home" class="smoothScroll">Home</a>
-    / <a href="#about" class="smoothScroll">About</a>
-    / <a href="#portfolio" class="smoothScroll">Portfolio</a>
-    / <a href="#services" class="smoothScroll">Services</a>
-    / <a href="#contact" class="smoothScroll">Contact</a>
-    / <a href="#"><i class="fa fa-facebook"></i></a>
-    / <a href="#"><i class="fa fa-twitter"></i></a>
-    / <a href="#"><i class="fa fa-dribbble"></i></a>
-    / <a href="#"><i class="fa fa-envelope"></i></a>
-  #menuToggle
-    i.fa.fa-bars
+header
+  br
+  br
+  h1.header.center.teal-text.text-lighten-2 ThoughtNirvana
+  .row.center
+    h5.header.col.s12.dark We Create Magic On And Off The Web
+  .row.center
+    a#download-button.btn-large.waves-effect.waves-light.teal.lighten-1 href="#" Learn More
+  br
+  br
+  
+  / .parallax
+  /   img src="../img/9.jpg" alt="Unsplashed background img 1"
+
+nav.mainNav.teal.lighten-5 role="navigation"
+  .nav-wrapper.container
+    a#logo-container.brand-logo href="#!" ThoughtNirvana
+    a.button-collapse href="#" data-activates="mobile-demo"
+      i.material-icons menu
+    ul.right.hide-on-med-and-down
+      li
+        a href="sass.html" What
+      li
+        a href="badges.html" Who
+      li
+        a href="collapsible.html" How
+      li
+        a href="mobile.html" Clients
+    ul.side-nav#mobile-demo
+      li
+        a href="sass.html" Sass
+      li
+        a href="badges.html" Components
+      li
+        a href="collapsible.html" Javascript
+      li
+        a href="mobile.html" Mobile
+
+/!
+  nav.teal.lighten-5 role="navigation"
+    .nav-wrapper.container
+      a#logo-container.brand-logo
+      ul.right.hide-on-med-and-down
+        li
+          a href="#" Navbar Link
+
+      ul#nav-mobile.side-nav
+        li
+          a href="#" Navbar Link
+      a href="#" data-activates="nav-mobile" class="button-collapse"
+        i class="material-icons" menu
+/!  
+  nav#theMenu.menu
+    .menu-wrap
+      h1.logo 
+        a href="index.html#home" ThoughtNirvana
+      / i.fa.fa-times.menu-close
+      a.smoothScroll href="#about" OVERVIEW
+      a.smoothScroll href="#portfolio" Our Clients
+      a.smoothScroll href="#slide2" HOW WE WORK
+      a.smoothScroll href="#slide3" WHO WE ARE
+      a.smoothScroll href="#slide4" CODE
+      a.smoothScroll href="#slide5" CONTACT
+      / <a href="#home" class="smoothScroll">Home</a>
+      / <a href="#about" class="smoothScroll">About</a>
+      / <a href="#portfolio" class="smoothScroll">Portfolio</a>
+      / <a href="#services" class="smoothScroll">Services</a>
+      / <a href="#contact" class="smoothScroll">Contact</a>
+      / <a href="#"><i class="fa fa-facebook"></i></a>
+      / <a href="#"><i class="fa fa-twitter"></i></a>
+      / <a href="#"><i class="fa fa-dribbble"></i></a>
+      / <a href="#"><i class="fa fa-envelope"></i></a>
+    #menuToggle
+      i.fa.fa-bars
 
 /!
   #header.header

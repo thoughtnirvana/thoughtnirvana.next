@@ -1,183 +1,154 @@
-/ ******LANDING PAGE START****** /
-
-section#home name="home"
-#headerwrap
-  #headerOverlay
-    .container.mainheader
-      .row
-        h1.animated.fadeInDown ThoughtNirvana
-        h2 We Create Magic On And Off The Web
-    /!
-      .container.subheader
-        .row
-          <h2 class=> We create magic on and off the web. Not a penny more, not a penny less. <span>We build software for your needs, which is often different from what you initially want. We work with you to transform "want" into "need" into "working software". </span>Honesty and integrity matters. <span>We appreciate you chose to work with us - we work very hard to ensure quality, honesty, transparency and clarity. </span>Talk is cheap, show me the code. <span>We assure that measurable progress is being delivered to you starting day 1. </span>The only constant is change. <span>We know and respect this and work with you to let the software evolve. </span>Straight from the gut. <span>We don't play buzzword bingo.</span></h2>
-    #stickyNotes.container
-      .row.animatedParent.animateOnce
-        - countGroup = 1
-        - count = 1
-        - tenets.each_slice(3) do |tenet_group|
-          div[class="stickyNoteGroup#{countGroup}"]
-            - tenet_group.each do |tenet|
-              div[class="quote-container#{count} animated fadeInDown delay-250 col-xs-6 col-sm-4 col-md-4" data-id="#{count}"]
-                i.pin
-                div[class="blockquote note yellow#{count}"]
-                  strong = tenet["header"]
-                  p = tenet["description"]
-                - count = count + 1
-          - countGroup = countGroup + 1
-
-/ ******LANDING PAGE END****** /
-
-/ ******OVERVIEW START****** /
-
-#overviewwrap
-  section#overview name="overview"
-  .container.marginbot-50
-    .row
-      .col-lg-8.col-lg-offset-2
-        .animatedParent.animateOnce data-sequence='500'
-          .section-heading.text-center
-            h2.animated.fadeInDownShort.h-bold data-id='1' THOUGHTNIRVANA IS A SOFTWARE DEVELOPMENT SHOP
-            h4.animated.fadeInDownShort.h-bold data-id='2' BASED OUT OF THE BEAUTIFUL CITY OF BANGALORE
-
-  section#skills name="skills"
-    .whatWeCanDo.text-center
+/!
+  #index-banner.parallax-container
+    .section.no-pad-bot
       .container
-        .row
-          h3 WHAT WE DO
-          .divider-header
-        .row
-          .animatedParent.animateOnce
-            - serviceCount = 1
-            - services.each_slice(3) do |service_group|
-              - service_group.each do |service|
-                .col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-                  .service-box.animated.fadeIn
-                    div[class="topic #{service['class']}"]
-                      h3 = service["header"]
-                      h3 = service["header2"]
-                      p = service["description"]
+        br
+        br
+        h1.header.center.teal-text.text-lighten-2 ThoughtNirvana
+        .row.center
+          h5.header.col.s12.dark We Create Magic On And Off The Web
+        .row.center
+          a#download-button.btn-large.waves-effect.waves-light.teal.lighten-1 href="#" Learn More
+        br
+        br
 
-/ ******OVERVIEW END****** /
+    .parallax
+      img src="../img/9.jpg" alt="Unsplashed background img 1"
 
-.margintop-50
-/ .sep.overviewsep data-stellar-background-ratio="0.5"
+.container.services
+  .section
 
-
-/ ******OUR CLIENTS START****** /
-section#client name="client"
-#clientwrap.text-center
-  .container
+    .row.center
+      h5.col.s12 THOUGHTNIRVANA IS A SOFTWARE DEVELOPMENT SHOP
+      h6.col.s12 BASED OUT OF THE BEAUTIFUL CITY OF BANGALORE
+    .row.center.margintop50
+      h5 WHAT WE DO
+    .divider.teal.lighten-1.marginbot50
+    - services.each_slice(3) do |service_group|
+      .row
+        - service_group.each do |service|
+          .col.s12.m6.l4
+            div[class="topic card-panel teal lighten-4 hoverable #{service['class']}"]
+              h3 = service["header"]
+              h3 = service["header2"]
+              p = service["description"]
     .row
-      h3 WHO WE HAVE DONE IT FOR
-      .divider-header.marginbot-50
-      div.clientList.animatedParent.animateOnce
-        - clients.each_slice(3) do |client_group|
-          .row
-            - client_group.each do |client|
-              div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logowrap #{client['name']}"]
-                div[class="logo"]
-                  img.img-responsive src="img/Logos/#{client['logo']}"
+      .col.s12.m4
+        .icon-block
+          h2.center.brown-text
+            i.material-icons flash_on
+          h5.center Speeds up development
 
-section#testimonial name="testimonial"
-#testimonialwrap.text-center
-  .container
+          p.light We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.
+
+      .col.s12.m4
+        .icon-block
+          <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+          h5.center User Experience Focused
+
+          p.light By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.
+
+      .col.s12.m4
+        .icon-block
+          h2.center.brown-text
+            i.material-icons settings
+          h5.center Easy to work with
+
+          p.light We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.
+
+.parallax-container.valign-wrapper
+  .section.no-pad-bot
+    .container
+      .row.center
+        h4.header.col.s12.dark = tenets[0]["header"]
+        h5.header.col.s12.dark = tenets[0]["description"]
+  .parallax
+    img src="../img/9.jpg" alt="Unsplashed background img 2"
+
+.container
+  .section
+
+    .row.center.margintop50
+      h5 WHO WE HAVE DONE IT FOR
+    .divider.teal.lighten-1.marginbot50
+
+    - clients.each_slice(3) do |client_group|
+      .row.center
+        - client_group.each do |client|
+          .col.s12.m6.l4
+            div[class="logowrap card-panel teal lighten-4 hoverable #{client['name']}"]
+              .logo
+                img.responsive-img src="img/Logos/#{client['logo']}"
+
+
     .row
-      h3 DID THEY LOVE IT?
-      .divider-header
+      .col.s12.center
+        h3
+          i.mdi-content-send.brown-text
+        h4 Contact Us
+        p.left-align.light Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 
+.parallax-container.valign-wrapper
+  .section.no-pad-bot
+    .container
+      .row.center
+        h4.header.col.s12.dark = tenets[1]["header"]
+        h5.header.col.s12.dark = tenets[1]["description"]
+  .parallax
+    img src="../img/6.jpg" alt="Unsplashed background img 3"
 
-/ ******OUR CLIENTS END****** /
+.container
+  .section
 
-/ .sep.clientssep data-stellar-background-ratio="0.5"
-
-/ ****** HOW WE DO START ****** /
-
-section#how name="how"
-#howwrap.text-center.margintop-50
-  .container
-    .row
-      h3 HOW WE DO
-      .divider-header
+    .row.center.margintop50
+      h5 HOW WE DO
+      .divider.teal.lighten-1.marginbot50
       h3 The ThoughtNirvana way
       p.custom-font Software for the humans, by the humans
       p.custom-font We believe software is a facilitator
       p.custom-font We build software that obeys you, not the other way round
-      .marginbot-50
-      - hows.each_slice(3) do |how_group|
-        .row
-        .marginbot-50
-          - how_group.each do |how|
-            div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12 how #{how['header']}"]
+      .marginbot50
+    - hows.each_slice(3) do |how_group|
+      .row
+        - how_group.each do |how|
+          .col.s12.m6.l4
+            div[class="card-panel teal lighten-4 hoverable how #{how['header']}"]
               h3 = how["header"]
               strong = how["subheader"]
               p = how["description"]
 
+.container
+  .section
 
-/ ****** HOW WE DO END ****** /
+    .row.center.margintop50
+      h5 WHAT WE HAVE DONE IN THE OPEN
+      .divider.teal.lighten-1.marginbot50
+      h3 ThoughtNirvana endorses open source
+      p Many of the biggies viz. Google, Amazon depend on open source software
+      p We have benefitted a lot from open source
+      p So to return the favor, we open source all non critical code
+      p
+        'Don't forget to check us out on
+        a href="https://github.com/organizations/thoughtnirvana" Github
 
-/ ****** OPEN SOURCE START ****** /
-
-section#opensource name="opensource"
-#opensourcewrap.text-center.margintop-50
-  .container
-    .row
-      h3
-        strog WHAT WE HAVE DONE IN THE OPEN
-      .divider-header
-
-      .center.intro
-        h3 ThoughtNirvana endorses open source
-        p.large Many of the biggies viz. Google, Amazon depend on open source software
-        p.large We have benefitted a lot from open source
-        p.large So to return the favor, we open source all non critical code
-        p.large
-          'Don't forget to check us out on
-          a href="https://github.com/organizations/thoughtnirvana" Github
-
-      - repos.each_slice(3) do |repo_group|
+    - repos.each_slice(4) do |repo_group|
         .row
           - repo_group.each do |repo|
-            col-lg-4.col-md-4.col-sm-4.col-xs-12.desc
-              div
-                .service-box
-                  .repo
-                    h3: a href=repo["link"] = repo["header"]
-                    p.small = repo["language"]
-                    p = repo["description"]
+            .col.s12.m3.l3
+              .repo.card-panel.teal.lighten-4.hoverable
+                h5: a href=repo["link"] = repo["header"]
+                p.small = repo["language"]
+                p.smaller = repo["description"]
 
-/ ****** OPEN SOURCE END ******/
+.container
+  .section
 
-/ ****** WHO WE ARE START ****** /
-
-section#who name="who"
-#whowrap.text-center.margintop-50
-  .container
+    .row.center.margintop50
+      h5 MEET
+      .divider.teal.lighten-1.marginbot50
     .row
-      h3
-        strong MEET
-      .divider-header.marginbot-50
-
-      h5
-        strong THE FOUNDING MEMBERS
-      .marginbot-50
-
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        img.img-circle.foundingImg src="img/beer1.jpg" alt=""
-        span Beer, King Of Good Times
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        img.img-circle.foundingImg src="img/pizza1.jpg" alt=""
-        span Pizza, CHO a.k.a Chief Hunger Officer
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        img.img-circle.foundingImg src="img/db1.jpg" alt=""
-        span Iron, Office Masseur, Keeps Stress Away
-
-    .row.margintop-50
-      h5
-        strong AND THE PROGRAMMERS
-      .marginbot-50
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        .programmer1
+      .col.s12.m4.l4
+        .programmer1.card-panel.teal.lighten-4.hoverable
           h3 Rahul Kumar
           p 1. Started Programming in high school
           p 2. List of Programming languages and framework that he hasn't played with is very short
@@ -187,14 +158,14 @@ section#who name="who"
           p 6. Latest TV Show: Elementary
           p 7. Lates Movie: Deadpool
           p 8. Can bench 100kg while sleeping
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        img.talkImg src="img/good.jpg"
-        /div[class="col-lg-6 col-md-6 col-sm-6 col-xs-12"]
-        /  img.talkImg src="img/rahul2.jpg" alt=""
-        /div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        /  img.talkImg src="img/ujjawal2.jpg" alt=""
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        .programmer2
+      .col.s12.m4.l4
+        img.responsive-img.card-panel.teal.lighten-4.hoverable src="img/good.jpg"
+          /div[class="col-lg-6 col-md-6 col-sm-6 col-xs-12"]
+          /  img.talkImg src="img/rahul2.jpg" alt=""
+          /div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
+          /  img.talkImg src="img/ujjawal2.jpg" alt=""
+      .col.s12.m4.l4
+        .programmer2.card-panel.teal.lighten-4.hoverable
           h3 Ujjawal Asthana
           p 1. Lost his programming virginity to C but is currently married to Rails and shares a room with Web Development
           p 2. Is also good friends with Python and hangs out a lot with Javascript
@@ -204,172 +175,32 @@ section#who name="who"
           p 6. Latest TV Show: The Flash
           p 7. Latest Moview: Deadpool
           p 8. Can do 10 Dragon Flags without breaking a sweat
-      /*
-        .col-lg-4.name
-          img.img-responsive src="img/ujjawal2.jpg"
-          p UJJAWAL ASTHANA
-          / .name-label
-        .col-lg-4.name-desc
-          h3 The DNA of ThoughtNirvana
-          p We are a different kind of development shop
-          p Software development is more than a business for us
-          p We have been in business since 2010.
-        .col-lg-4.name-desc
-          p The founders have been programming since 2003 for personal and commercial projects with varying degree of success. We have worked on web and non web based softwares, big data systems, embedded video devices, plethora of languages and platforms.
-          p But most importantly, we have been shipping sofwarre of all size, writinng lots of code, and saving tons of money for the clients.
-          p The founders have worked as consultants before founding ThoughtNirvana. We have shipped software for personal and commercial purpose, and we offer practical end to end development experience.
-        .row
-          .col-lg-4.name
-            img.img-responsive src="img/rahul2.jpg"
-            p RAHUL KUMAR
-            / .name-label
-          .col-lg-4.name-desc
-            p We understand the pulse of software development, and based on our development skills and experiece, we work hard to provide you with a pleasant experience and on-time delivery.
-            p We are an end to end development company - all development and design happens in-house and is done by a closely-knit team. As a result, you get software which is highly cohesive and consistent.
-          .col-lg-4.name-desc
-            p We are a people's company. We believe software development is a social activity which requires talented individuals working towards a common goal. It isn't something that can be done by interchangeable resources.
-            p We believe software has made the world a better place, and we take great pride in our craft.
 
-/ ****** WHO WE ARE END ****** /
+.container
+  .section
 
-/ ****** CONTACT START ****** /
-section#contact name="contact"
-#contactwrap.text-center.margintop-50
-  .container
-    .row
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        h2 Careers
-        p.large Do you like what we do?
-        p.large Or think you can make things better?
-        p.large Do you live and breathe code?
-        p.large Or are the best business guy in the game?
-        p.large Our doors are open.
-        p.large: a href="mailto:jobs@thoughtnirvana.com" jobs@thoughtnirvana.com
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        h1 Hire Us
-        p.large First step is half the battle
-        p.large Do you want to revolutionize your business?
-        p.large Or implement something never heard of before?
-        p.large Or save money by automating existing processes?
-        p.large Give us a shout
-        p.large: a href="mailto:biz@thoughtnirvana.com" biz@thoughtnirvana.com
-      div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
-        h2 Media enquiry
-        p.large Queries regarding press or marketing?
-        p.large: a href="mailto:media@thoughtnirvana.com" media@thoughtnirvana.com
-
-/ ****** CONTACT END ****** /
-
-
-
-/!
-  section
-    #slide1
-      .center.intro
-        h1.x-large ThoughtNirvana is a software development shop.
-        p.large We create magic on and off the web.
-      .tenets
-        dl
-          - for tenet in tenets
-            dt = tenet["header"]
-            dd = tenet["description"]
-
-      - services.each_slice(3) do |service_group|
-        .topic-group
-          - service_group.each do |service|
-            .topic
-              h3 = service["header"]
-              p = service["description"]
-
-    #slide2
-      .center.intro
-        h1.x-large The ThoughtNirvana way 
-        p.large Software for the humans, by the humans
-        p.large We believe software is a facilitator
-        p.large We build software that obeys you, not the other way round
-
-      .container
-        ol
-          - hows.each do |how|
-            li
-              h3 = how["header"]
-              p.small = how["subheader"]
-              p = how["description"]
-
-    #slide3
-      .center.intro
-        h1.x-large The DNA of ThoughtNirvana
-        p.large We are a different kind of development shop
-        p.large Software development is more than a business for us
-
-      .container
-        h3 About us
-        p We have been in business since 2010.
-        p The founders have been programming since 2003 for personal and commercial projects with varying degree of success. We have worked on web and non web based softwares, big data systems, embedded video devices, plethora of languages and platforms.
-        p But most importantly, we have been shipping sofwarre of all size, writinng lots of code, and saving tons of money for the clients.
-        p The founders have worked as consultants before founding ThoughtNirvana. We have shipped software for personal and commercial purpose, and we offer practical end to end development experience.
-        p We understand the pulse of software development, and based on our development skills and experiece, we work hard to provide you with a pleasant experience and on-time delivery.
-        p We are an end to end development company - all development and design happens in-house and is done by a closely-knit team. As a result, you get software which is highly cohesive and consistent.
-        p We are a people's company. We believe software development is a social activity which requires talented individuals working towards a common goal. It isn't something that can be done by interchangeable resources.
-        p We believe software has made the world a better place, and we take great pride in our craft.
-        .last
-
-      .team
-        .member-left
-          == img_tag "img/rahul.jpg", class: "left"
-          h3 Rahul Kumar
-          p.small Co-founder/Programmer/Product guy
-          p Rahul has been programming since high school. Before starting ThoughtNirvana, he was working for Infosys, and has worked for Yahoo Search and Media teams in his tenure there. While in college, he used to do an extensive amount of Java, C and C++. With time, he changed favorites and does most of his work in Python, Ruby and Clojure now. He is an Ubuntu and Vim enthusiast.
-          p.handle: a href="https://github.com/rahulkmr" Github
-          p.handle: a href="http://www.linkedin.com/in/irahul" Linked-in
-          p.handle: a href="https://twitter.com/#!/rahulsinner" Twitter
-        .member-right
-          == img_tag "img/ujjawal.jpg", class: "left"
-          h3 Ujjawal Asthana
-          p.small Co-founder/Programmer/Business guy
-          p Ujjawal was working for Infosys before starting ThoughtNirvana. He worked for an Indian startup on traffic analysic, and for BT on their set top boxes. He programs in Python, Ruby and C, and spends his time hacking on django and rails. Apart from technical responsibilites, he handles the business aspects of running a start-up.
-          p.handle: a href="https://github.com/ujjawal" Github
-          p.handle: a href="http://www.linkedin.com/in/ujjawalasthana" Linked-in
-          p.handle: a href="https://twitter.com/#!/ujjawal_a" Twitter
-
-    #slide4
-      .center.intro
-        h1.x-large ThoughtNirvana endorses open source
-        p.large Many of the biggies viz. Google, Amazon depend on open source software
-        p.large We have benefitted a lot from open source
-        p.large So to return the favor, we open source all non critical code
-        p.large 
-          'Don't forget to check us out on
-          a href="https://github.com/organizations/thoughtnirvana" Github
-
-      - repos.each_slice(3) do |repo_group|
-        .topic-group
-          - repo_group.each do |repo|
-            .topic
-              h3: a href=repo["link"] = repo["header"]
-              p.small = repo["language"] 
-              p = repo["description"]
-
-    #slide5
-      .center.intro
-        h1.x-large Work with us 
-        p.large First step is half the battle 
-        p.large Do you want to revolutionize your business?
-        p.large Or implement something never heard of before?
-        p.large Or save money by automating existing processes?
-        p.large Give us a shout
-        p.large: a href="mailto:biz@thoughtnirvana.com" biz@thoughtnirvana.com
-
-      .center.intro
-        h1.x-large Careers 
-        p.large Do you like what we do? 
-        p.large Or think you can make things better? 
-        p.large Do you live and breathe code? 
-        p.large Or are the best business guy in the game? 
-        p.large Our doors are open. 
-        p.large: a href="mailto:jobs@thoughtnirvana.com" jobs@thoughtnirvana.com
-
-      .center.intro
-        h1.x-large Media enquiry 
-        p.large Queries regarding press or marketing?
-        p.large: a href="mailto:media@thoughtnirvana.com" media@thoughtnirvana.com
+    .row.center.margintop50
+      .divider.teal.lighten-1.marginbot50
+      .col.s12.m4.l4
+        .careers.card-panel.teal.lighten-5.hoverable
+          h2 Careers
+          p.large: a href="mailto:jobs@thoughtnirvana.com" jobs@thoughtnirvana.com
+          p.large Do you like what we do?
+          p.large Or think you can make things better?
+          p.large Do you live and breathe code?
+          p.large Or are the best business guy in the game?
+          p.large Our doors are open.
+      .col.s12.m4.l4
+        .hire.card-panel.teal.lighten-2.hoverable
+          h1 Hire Us
+          p.large: a href="mailto:biz@thoughtnirvana.com" biz@thoughtnirvana.com
+          p.large First step is half the battle
+          p.large Do you want to revolutionize your business?
+          p.large Or implement something never heard of before?
+          p.large Or save money by automating existing processes?
+          p.large Give us a shout
+      .col.s12.m4.l4
+        .media.card-panel.teal.lighten-5.hoverable
+          h2 Media enquiry
+          p.large: a href="mailto:media@thoughtnirvana.com" media@thoughtnirvana.com
+          p.large Queries regarding press or marketing?
