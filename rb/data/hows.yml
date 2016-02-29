@@ -2,19 +2,24 @@ hows:
     - header: Technology
       subheader: The engine of your car
       description: Technology is a resource, and we use whatever gets you to your destination faster. Technology is just the engine of the car you are driving to reach your destination - it does play a part but the more important part is getting to the destination at time. We have extensive experience in Ruby/Rails/Sinatra, Python/Django/Flask, Java, Javascript, Clojure, C, C++, and various other technologies. We work with you to figure out the right tool for the job.
+      class: first
 
     - header: Discussion 
       subheader: Communication is king
       description: We sit down with you, we listen to you, we work with you to determine a common vocabulary and set of requirements that we are going to deal with. We work closely with you to make sure we are on the same page, so as to avoid any long term consequences. We are there for you on all communication channels - skype, mail, IRC, phone.
+      class: first
 
     - header: Development
       subheader: Progress goes boink
       description: This is where the we convert dreams & desires to reality. A big part of the process is spent here, and a lot of to & fro happens at this stage. We realize change is a reality of life, and we whole heartedly embrace it. Our software development skills, coupled with the effective communication, ensure that the work is always on track.
+      class: first
 
     - header: Deployment
       subheader: It's showtime
       description: We prepare an extensive, cohesive plan to realize an impeccable launch. If things go wrong, we are prepared - we have ample firefighting experience with us to tackle any untoward incidents. That said, things generally don't go wrong owing to our eye for the details, and extensive testing through which the application passes before launch.
+      class: second
 
     - header: Support
       subheader: The teenager problem 
       description: All was well, but things have changed, and you need us to take care of your berserk teenage kid. Fear not - been there, done it all. Evolving systems are a fact of life, and we are well equipped to handle them. 
+      class: second

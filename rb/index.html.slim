@@ -15,23 +15,23 @@
     .parallax
       img src="../img/9.jpg" alt="Unsplashed background img 1"
 
-.container.services
+#services.container.services
   .section
 
     .row.center
       h5.col.s12 THOUGHTNIRVANA IS A SOFTWARE DEVELOPMENT SHOP
       h6.col.s12 BASED OUT OF THE BEAUTIFUL CITY OF BANGALORE
     .row.center.margintop50
-      h5 WHAT WE DO
+      h4 WHAT WE DO
     .divider.teal.lighten-1.marginbot50
     - services.each_slice(3) do |service_group|
-      .row
+      .row.center
         - service_group.each do |service|
           .col.s12.m6.l4
-            div[class="topic card-panel teal lighten-4 hoverable #{service['class']}"]
+            div[class="topic card-panel waves-effect waves-light waves-ripple hoverable #{service['class']}"]
               h3 = service["header"]
               h3 = service["header2"]
-              p = service["description"]
+              p.light = service["description"]
     .row
       .col.s12.m4
         .icon-block
@@ -56,7 +56,7 @@
 
           p.light We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.
 
-.parallax-container.valign-wrapper
+#parallax-container1.parallax-container.valign-wrapper
   .section.no-pad-bot
     .container
       .row.center
@@ -65,18 +65,18 @@
   .parallax
     img src="../img/9.jpg" alt="Unsplashed background img 2"
 
-.container
+#clients.container
   .section
 
     .row.center.margintop50
-      h5 WHO WE HAVE DONE IT FOR
+      h4 WHO WE HAVE DONE IT FOR
     .divider.teal.lighten-1.marginbot50
 
     - clients.each_slice(3) do |client_group|
       .row.center
         - client_group.each do |client|
           .col.s12.m6.l4
-            div[class="logowrap card-panel teal lighten-4 hoverable #{client['name']}"]
+            div[class="logowrap card-panel waves-effect waves-light waves-ripple light-green lighten-4 hoverable #{client['name']}"]
               .logo
                 img.responsive-img src="img/Logos/#{client['logo']}"
 
@@ -88,7 +88,7 @@
         h4 Contact Us
         p.left-align.light Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
 
-.parallax-container.valign-wrapper
+#parallax-container2.parallax-container.valign-wrapper
   .section.no-pad-bot
     .container
       .row.center
@@ -97,37 +97,37 @@
   .parallax
     img src="../img/6.jpg" alt="Unsplashed background img 3"
 
-.container
+#hows.container.hows
   .section
 
     .row.center.margintop50
-      h5 HOW WE DO
+      h4 HOW WE DO
       .divider.teal.lighten-1.marginbot50
       h3 The ThoughtNirvana way
-      p.custom-font Software for the humans, by the humans
-      p.custom-font We believe software is a facilitator
-      p.custom-font We build software that obeys you, not the other way round
+      h6.light Software for the humans, by the humans
+      h6.light We believe software is a facilitator
+      h6.light We build software that obeys you, not the other way round
       .marginbot50
     - hows.each_slice(3) do |how_group|
       .row
         - how_group.each do |how|
           .col.s12.m6.l4
-            div[class="card-panel teal lighten-4 hoverable how #{how['header']}"]
+            div[class="card-panel waves-effect waves-light waves-ripple amber lighten-5 hoverable how #{how['header']} #{how['class']}"]
               h3 = how["header"]
-              strong = how["subheader"]
-              p = how["description"]
+              strong.thin = how["subheader"]
+              p.light = how["description"]
 
-.container
+#code.container
   .section
 
     .row.center.margintop50
-      h5 WHAT WE HAVE DONE IN THE OPEN
+      h4 WHAT WE HAVE DONE IN THE OPEN
       .divider.teal.lighten-1.marginbot50
       h3 ThoughtNirvana endorses open source
-      p Many of the biggies viz. Google, Amazon depend on open source software
-      p We have benefitted a lot from open source
-      p So to return the favor, we open source all non critical code
-      p
+      h6.light Many of the biggies viz. Google, Amazon depend on open source software
+      h6.light We have benefitted a lot from open source
+      h6.light So to return the favor, we open source all non critical code
+      h6.light
         'Don't forget to check us out on
         a href="https://github.com/organizations/thoughtnirvana" Github
 
@@ -135,72 +135,72 @@
         .row
           - repo_group.each do |repo|
             .col.s12.m3.l3
-              .repo.card-panel.teal.lighten-4.hoverable
+              .repo.card-panel.waves-effect.waves-light.waves-ripple.orange.lighten-5.hoverable
                 h5: a href=repo["link"] = repo["header"]
-                p.small = repo["language"]
-                p.smaller = repo["description"]
+                strong.condensed = repo["language"]
+                p.condensed.light = repo["description"]
 
-.container
+#team.container
   .section
 
     .row.center.margintop50
-      h5 MEET
+      h4 MEET
       .divider.teal.lighten-1.marginbot50
     .row
       .col.s12.m4.l4
-        .programmer1.card-panel.teal.lighten-4.hoverable
-          h3 Rahul Kumar
-          p 1. Started Programming in high school
-          p 2. List of Programming languages and framework that he hasn't played with is very short
-          p 3. Loves solving complex issues related to preformance
-          p 4. Drinks black coffee followed by Beer
-          p 5. Eats whatever is available
-          p 6. Latest TV Show: Elementary
-          p 7. Lates Movie: Deadpool
-          p 8. Can bench 100kg while sleeping
+        .programmer1.card-panel.waves-effect.waves-light.waves-ripple.red.lighten-5.hoverable
+          h5.thin Rahul Kumar
+          p.light 1. Started Programming in high school
+          p.light 2. List of Programming languages and framework that he hasn't played with is very short
+          p.light 3. Loves solving complex issues related to preformance
+          p.light 4. Drinks black coffee followed by Beer
+          p.light 5. Eats whatever is available
+          p.light 6. Latest TV Show: Elementary
+          p.light 7. Lates Movie: Deadpool
+          p.light 8. Can bench 100kg while sleeping
       .col.s12.m4.l4
-        img.responsive-img.card-panel.teal.lighten-4.hoverable src="img/good.jpg"
+        img.responsive-img.card-panel.waves-effect.waves-light.waves-ripple.red.lighten-5.hoverable src="img/good.jpg"
           /div[class="col-lg-6 col-md-6 col-sm-6 col-xs-12"]
           /  img.talkImg src="img/rahul2.jpg" alt=""
           /div[class="col-lg-4 col-md-4 col-sm-4 col-xs-12"]
           /  img.talkImg src="img/ujjawal2.jpg" alt=""
       .col.s12.m4.l4
-        .programmer2.card-panel.teal.lighten-4.hoverable
-          h3 Ujjawal Asthana
-          p 1. Lost his programming virginity to C but is currently married to Rails and shares a room with Web Development
-          p 2. Is also good friends with Python and hangs out a lot with Javascript
-          p 3. Screams in Joy when comes across a stylish but fast web application
-          p 4. Drinks tea followed by Beer
-          p 5. Eats Chicken followed by Chicken
-          p 6. Latest TV Show: The Flash
-          p 7. Latest Moview: Deadpool
-          p 8. Can do 10 Dragon Flags without breaking a sweat
+        .programmer2.card-panel.waves-effect.waves-light.waves-ripple.red.lighten-5.hoverable
+          h5.thin Ujjawal Asthana
+          p.light 1. Lost his programming virginity to C but is currently married to Rails and shares a room with Web Development
+          p.light 2. Is also good friends with Python and hangs out a lot with Javascript
+          p.light 3. Screams in Joy when comes across a stylish but fast web application
+          p.light 4. Drinks tea followed by Beer
+          p.light 5. Eats Chicken followed by Chicken
+          p.light 6. Latest TV Show: The Flash
+          p.light 7. Latest Moview: Deadpool
+          p.light 8. Can do 10 Dragon Flags without breaking a sweat
 
-.container
+#contacts.container.contacts
   .section
 
     .row.center.margintop50
       .divider.teal.lighten-1.marginbot50
       .col.s12.m4.l4
-        .careers.card-panel.teal.lighten-5.hoverable
-          h2 Careers
-          p.large: a href="mailto:jobs@thoughtnirvana.com" jobs@thoughtnirvana.com
-          p.large Do you like what we do?
-          p.large Or think you can make things better?
-          p.large Do you live and breathe code?
-          p.large Or are the best business guy in the game?
-          p.large Our doors are open.
+        .careers.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
+          h4.thin Careers
+          p: a href="mailto:jobs@thoughtnirvana.com" jobs@thoughtnirvana.com
+          p.light Do you like what we do?
+          p.light Or think you can make things better?
+          p.light Do you live and breathe code?
+          p.light Or are the best business guy in the game?
+          p.light Our doors are open.
       .col.s12.m4.l4
-        .hire.card-panel.teal.lighten-2.hoverable
+        .hire.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
           h1 Hire Us
-          p.large: a href="mailto:biz@thoughtnirvana.com" biz@thoughtnirvana.com
-          p.large First step is half the battle
-          p.large Do you want to revolutionize your business?
-          p.large Or implement something never heard of before?
-          p.large Or save money by automating existing processes?
-          p.large Give us a shout
+          strong: a href="mailto:biz@thoughtnirvana.com" biz@thoughtnirvana.com
+          p.light First step is half the battle
+          p.light Do you want to revolutionize your business?
+          p.light Or implement something never heard of before?
+          p.light Or save money by automating existing processes?
+          p.light Give us a shout
       .col.s12.m4.l4
-        .media.card-panel.teal.lighten-5.hoverable
-          h2 Media enquiry
-          p.large: a href="mailto:media@thoughtnirvana.com" media@thoughtnirvana.com
-          p.large Queries regarding press or marketing?
+        .media.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
+          h4.thin Media Enquiry
+          p: a href="mailto:media@thoughtnirvana.com" media@thoughtnirvana.com
+          p.light Queries regarding press or marketing?

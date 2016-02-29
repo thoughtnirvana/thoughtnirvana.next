@@ -1,6 +1,10 @@
 body {
   max-width: 100%;
-  padding-top: 700px;
+  padding-top: 600px;
+  transition: 0s linear;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .04);
 }
 
 .margintop100 { margin-top: 100px !important; }
@@ -9,7 +13,13 @@ body {
 .marginbot50 { margin-bottom: 50px !important; }
 
 header {
-  background: url(../img/9.jpg) no-repeat center top;
+  background: 
+  linear-gradient(
+    rgba(0, 0, 0, 0.55), 
+    rgba(0, 0, 0, 0.55)
+  ),
+  url(../img/9.jpg) no-repeat 50% 50%;
+  /* background: url(../img/9.jpg) no-repeat center top; */
   min-height: 700px;
   padding-top: 50px;
 }
@@ -22,6 +32,13 @@ header {
   z-index: 500;
   box-shadow: 0 2px 3px rgba(0,0,0, .4);
   margin-bottom: -80px;
+  height:80px;
+  letter-spacing: 3px;
+}
+
+nav ul a.btn {
+  margin-left: 0px;
+  margin-right: 10px;
 }
 
 .mainNavScrolled, header {
@@ -30,28 +47,143 @@ header {
   width: 100%;
 }
 
+.smallNav {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  height: 65px;
+  .brand-logo {
+    font-size: 1.5rem;
+  }
+  ul a {
+    font-size: 1.2rem;
+  }
+}
+
+/*rgb(239,154,154)
+rgb(244,143,177)
+rgb(206,147,216)
+rgb(41,182,246)
+rgb(66,165,245)
+rgb(171,71,188)*/
+
 .mainContainer {
-  background: #e0f2f1;
-  padding-top: 110px;
+  background: #ffffff;
+  padding-top: 150px;
   z-index: 1;
+  h2, h3, h4, h5 {
+    letter-spacing: 5px;
+    font-weight: 300;
+    line-height: 40px;
+  }
+  h6 {
+    letter-spacing: 3px;
+    font-weight: 300;
+    line-height: 25px;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+}
+
+nav .brand-logo {
+  padding-left: 50px;
 }
 
 nav ul a,
 nav .brand-logo {
   color: #444;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+nav ul a {
+  font-size: 1.5rem;
+}
+
+.side-nav a {
+  font-size: 1.5rem;
+}
+
+nav .brand-logo {
+  font-size: 2.5rem;
 }
 
 p {
   line-height: 2rem;
+  letter-spacing: 2px;
 }
 
 .button-collapse {
   color: #26a69a;
 }
 
-#index-banner {
+#header {
   h1 {
     font-size: 100px;
+    font-weight: 300px;
+    letter-spacing: 5px;
+  }
+  h5 {
+    font-weight: 500;
+    letter-spacing: 5px;
+  }
+}
+
+
+.services {
+  padding-top: 50px;
+  .first {
+    height: 330px;
+  }
+  .second, .third {
+    height: 270px;
+  }
+}
+
+.hows {
+  .first {
+    height: 530px;
+  }
+  .second {
+    height: 450px;
+  }
+  p {
+    letter-spacing: .2px;
+  }
+}
+
+.repo {
+  height: 250px;
+  p {
+    letter-spacing: .2px;
+    line-height: 25px;
+  }
+  h5 {
+    letter-spacing: 1px;
+    font-weight: 100;
+    line-height: 30px;
+  }
+}
+
+.contacts {
+  .hire {
+    height: 500px;
+    margin-top: -35px;
+    a {
+      font-size: 24px;
+    }
+  }
+  .careers, .media {
+    height: 420px;
+    a {
+      font-size: 18px;
+    }
   }
 }
 
@@ -59,10 +191,23 @@ p {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  background:
+    linear-gradient(
+    rgba(0, 0, 0, 0.55), 
+    rgba(0, 0, 0, 0.55)
+  );
 }
 .parallax-container .section {
   width: 100%;
+}
+
+#parallax-container1, #parallax-container2 {
+  h4{
+    color: #26a69a;
+  }
+  h5 {
+    color: #26a69a;
+  }
 }
 
 @media only screen and (max-width : 992px) {
@@ -79,6 +224,13 @@ p {
   #index-banner .section {
     top: 0;
   }
+  nav .brand-logo {
+    padding-left: 0px;
+  }
+}
+
+#sidenav-overlay {
+  z-index: 1;
 }
 
 .icon-block {
@@ -90,4 +242,5 @@ p {
 
 footer.page-footer {
   margin: 0;
+  height: 175px;
 }
