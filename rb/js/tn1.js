@@ -1,13 +1,16 @@
 (function($){
   $(function(){
 
+    $('.slider').slider({full_width: false, height: 200});
+    $('.slider').slider('start');
+    $('.slider').slider('next');
     $('.button-collapse').sideNav({
       menuWidth: 300, 
       edge: 'right', 
       closeOnClick: true
     });
     $('.parallax').parallax();
-    setInterval(updateGradient,10);    
+    setInterval(updateGradient,10);
   }); // end of document ready
 
   var mn = $(".mainNav");

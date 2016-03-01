@@ -13,7 +13,7 @@
         br
 
     .parallax
-      img src="../img/9.jpg" alt="Unsplashed background img 1"
+      img src="../img/9__.jpg" alt="Unsplashed background img 1"
 
 #services.container.services
   .section
@@ -32,29 +32,6 @@
               h3 = service["header"]
               h3 = service["header2"]
               p.light = service["description"]
-    .row
-      .col.s12.m4
-        .icon-block
-          h2.center.brown-text
-            i.material-icons flash_on
-          h5.center Speeds up development
-
-          p.light We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.
-
-      .col.s12.m4
-        .icon-block
-          <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-          h5.center User Experience Focused
-
-          p.light By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.
-
-      .col.s12.m4
-        .icon-block
-          h2.center.brown-text
-            i.material-icons settings
-          h5.center Easy to work with
-
-          p.light We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.
 
 #parallax-container1.parallax-container.valign-wrapper
   .section.no-pad-bot
@@ -66,6 +43,15 @@
     img src="../img/9.jpg" alt="Unsplashed background img 2"
 
 #clients.container
+  .section
+    .row.center.margintop50
+      .slider
+        ul.slides
+          - testimonials.each do |testimonial|
+            li
+              .caption.right-align
+                blockquote.teal-text = testimonial['say']
+                h3.light.teal-text = testimonial['name']
   .section
 
     .row.center.margintop50
@@ -83,22 +69,14 @@
               .logo
                 img.responsive-img src="img/Logos/#{client['logo']}"
 
-
-    .row
-      .col.s12.center
-        h3
-          i.mdi-content-send.brown-text
-        h4 Contact Us
-        p.left-align.light Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-
 #parallax-container2.parallax-container.valign-wrapper
   .section.no-pad-bot
     .container
       .row.center
-        h4.header.col.s12.dark = tenets[1]["header"]
-        h5.header.col.s12.dark = tenets[1]["description"]
+        h4.header.col.s12.dark = tenets[2]["header"]
+        h5.header.col.s12.dark = tenets[2]["description"]
   .parallax
-    img src="../img/6.jpg" alt="Unsplashed background img 3"
+    img src="../img/6_.jpg" alt="Unsplashed background img 3"
 
 #hows.container.hows
   .section
@@ -112,10 +90,11 @@
       h6.light We build software that obeys you, not the other way round
       .marginbot50
     - hows.each_slice(3) do |how_group|
-      .row
+      .row.center
         - how_group.each do |how|
           .col.s12.m6.l4
             div[class="card-panel waves-effect waves-light waves-ripple amber lighten-5 hoverable how #{how['header']} #{how['class']}"]
+              i.teal-text.material-icons.medium = "#{how['icon']}"
               h3 = how["header"]
               strong.thin = how["subheader"]
               p.light = how["description"]
@@ -138,10 +117,21 @@
         .row
           - repo_group.each do |repo|
             .col.s12.m3.l3
-              .repo.card-panel.waves-effect.waves-light.waves-ripple.orange.lighten-5.hoverable
-                h5: a href=repo["link"] = repo["header"]
-                strong.condensed = repo["language"]
-                p.condensed.light = repo["description"]
+              .card.amber.lighten-5.hoverable
+                .card-content
+                  span.card-title = repo["language"]
+                  p.light = repo["description"]
+                .card-action
+                  a.teal-text href=repo["link"] = repo["header"]
+
+#parallax-container2.parallax-container.valign-wrapper
+  .section.no-pad-bot
+    .container
+      .row.center
+        h4.header.col.s12.dark = tenets[1]["header"]
+        h5.header.col.s12.dark = tenets[1]["description"]
+  .parallax
+    img src="../img/good6.jpg" alt="Unsplashed background img 3"
 
 #team.container
   .section
