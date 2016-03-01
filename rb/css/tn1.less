@@ -1,6 +1,6 @@
 body {
   max-width: 100%;
-  padding-top: 600px;
+  padding-top: 700px;
   transition: 0s linear;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -55,10 +55,11 @@ nav ul a.btn {
   transition: all 0.3s;
   height: 65px;
   .brand-logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   ul a {
     font-size: 1.2rem;
+    height: 65px;
   }
 }
 
@@ -104,6 +105,14 @@ nav .brand-logo {
 
 nav ul a {
   font-size: 1.5rem;
+  height: 80px;
+  &:hover {
+    color: lighten(#bf360c, 10%);
+  }
+}
+
+#mainNav li.active a {
+  color: #bf360c;
 }
 
 .side-nav a {
@@ -184,6 +193,40 @@ p {
     a {
       font-size: 18px;
     }
+  }
+}
+
+#clients {
+  .logowrap {
+    border: 1px solid #d7d5cc;
+    padding-left: 45px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  .idt {
+    border-top:0px;
+    border-left: 0px;
+  }
+  .earbits {
+    border-top: 0px;
+  }
+  .feefighters {
+    border-right: 0px;
+    border-top: 0px;
+  }
+  .satrails {
+    border-left: 0px;
+    border-bottom: 0px;
+  }
+  .yahoo {
+    border-bottom: 0px;
+  }
+  .mapunity {
+    border-right: 0px;
+    border-bottom: 0px;
+  }
+  .row1 {
+    margin-bottom: 0px;
   }
 }
 

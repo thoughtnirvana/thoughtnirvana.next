@@ -71,12 +71,15 @@
     .row.center.margintop50
       h4 WHO WE HAVE DONE IT FOR
     .divider.teal.lighten-1.marginbot50
+    .margintop50
 
+    - count = 1
     - clients.each_slice(3) do |client_group|
-      .row.center
+      div[class="row center row#{count}"]
+        - count = count + 1
         - client_group.each do |client|
-          .col.s12.m6.l4
-            div[class="logowrap card-panel waves-effect waves-light waves-ripple light-green lighten-4 hoverable #{client['name']}"]
+           div[class="logowrap #{client['name']} col s12 m6 l4"]
+            div
               .logo
                 img.responsive-img src="img/Logos/#{client['logo']}"
 
