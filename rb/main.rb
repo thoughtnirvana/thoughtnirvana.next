@@ -92,8 +92,10 @@ def page_index
   hows = load_yaml('data/hows.yml')['hows']
   clients = load_yaml('data/clients.yml')['clients']
   repos = load_yaml('data/repos.yml')['repos'].sort_by {|repo| repo['header'].downcase }
+  testimonials = load_yaml('data/testimonials.yml')['testimonials']
   scope = Env.new(tenets: tenets, services: services, hows: hows,
-    repos: repos, clients: clients, page_name: 'overview')
+    repos: repos, clients: clients, testimonials: testimonials,
+    page_name: 'overview')
   scope.render('index.html.slim')
 end
 
