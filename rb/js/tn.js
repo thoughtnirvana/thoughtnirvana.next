@@ -1,7 +1,7 @@
 (function($){
   $(function(){
 
-    $('.slider').slider({full_width: false, height: 200});
+    $('.slider').slider({full_width: false, height: 250});
     $('.slider').slider('start');
     $('.slider').slider('next');
     $('.button-collapse').sideNav({
