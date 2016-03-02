@@ -16,6 +16,7 @@
       img src="../img/9__.jpg" alt="Unsplashed background img 1"
 
 #services.container.services
+  br
   .section
 
     .row.center
@@ -43,6 +44,7 @@
     img src="../img/9.jpg" alt="Unsplashed background img 2"
 
 #clients.container
+  br
   .section
     .row.center.margintop50
       .slider
@@ -79,6 +81,7 @@
     img src="../img/6_.jpg" alt="Unsplashed background img 3"
 
 #hows.container.hows
+  br
   .section
 
     .row.center.margintop50
@@ -100,6 +103,7 @@
               p.light = how["description"]
 
 #code.container
+  br
   .section
 
     .row.center.margintop50
@@ -117,23 +121,24 @@
         .row
           - repo_group.each do |repo|
             .col.s12.m3.l3
-              .card.amber.lighten-5.hoverable
+              .repo.card.amber.lighten-5.hoverable
                 .card-content
-                  span.card-title = repo["language"]
+                  a.teal-text href=repo["link"] = repo["header"]
                   p.light = repo["description"]
                 .card-action
-                  a.teal-text href=repo["link"] = repo["header"]
+                  span.card-title = repo["language"]
 
-#parallax-container2.parallax-container.valign-wrapper
+#parallax-container3.parallax-container.valign-wrapper
   .section.no-pad-bot
     .container
       .row.center
         h4.header.col.s12.dark = tenets[1]["header"]
         h5.header.col.s12.dark = tenets[1]["description"]
   .parallax
-    img src="../img/good6.jpg" alt="Unsplashed background img 3"
+    img src="../img/4.jpg" alt="Unsplashed background img 3"
 
 #team.container
+  br
   .section
 
     .row.center.margintop50
@@ -141,7 +146,7 @@
       .divider.teal.lighten-1.marginbot50
     .row
       .col.s12.m6.l6
-        img.card-panel.waves-effect.waves-light.waves-ripple.red.lighten-5.hoverable src="img/rahul_new2.jpg"
+        img.responsive-img.card-panel.waves-effect.waves-light.waves-ripple.red.lighten-5.hoverable src="img/rahul_new1_.jpg"
       .col.s12.m6.l6
         .programmer1.card-panel.waves-effect.waves-light.waves-ripple.red.lighten-5.hoverable
           h5.thin Rahul Kumar
@@ -168,9 +173,10 @@
           p.light  Latest Moview: Deadpool
           p.light  Can do 10 Dragon Flags without breaking a sweat
       .col.s12.m6.l6
-        img.responsive-img.card-panel.waves-effect.waves-light.waves-ripple.teal.lighten-5.hoverable src="img/ujj.jpg"
+        img.responsive-img.card-panel.waves-effect.waves-light.waves-ripple.teal.lighten-5.hoverable src="img/ujj_.jpg"
 
 #contacts.container.contacts
+  br
   .section
 
     .row.center.margintop50
