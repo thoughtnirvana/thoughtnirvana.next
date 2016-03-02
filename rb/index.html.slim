@@ -25,14 +25,13 @@
     .row.center.margintop50
       h4 WHAT WE DO
     .divider.teal.lighten-1.marginbot50
-    - services.each_slice(3) do |service_group|
-      .row.center
-        - service_group.each do |service|
-          .col.s12.m6.l4
-            div[class="topic card-panel waves-effect waves-light waves-ripple hoverable #{service['class']}"]
-              h3 = service["header"]
-              h3 = service["header2"]
-              p.light = service["description"]
+    .row.center
+      - services.each do |service|
+        .col.s12.m6.l4
+          div[class="topic card-panel waves-effect waves-light waves-ripple hoverable #{service['class']}"]
+            h3 = service["header"]
+            h3 = service["header2"]
+            p.light = service["description"]
 
 #parallax-container1.parallax-container.valign-wrapper
   .section.no-pad-bot
@@ -47,29 +46,22 @@
   br
   .section
     .row.center.margintop50
+      h4 WHO WE HAVE DONE IT FOR
+      .divider.teal.lighten-1.marginbot50
       .slider
         ul.slides
           - testimonials.each do |testimonial|
             li
               .caption.right-align
                 blockquote.teal-text = testimonial['say']
-                h3.light.teal-text = testimonial['name']
+                h5.light.teal-text = testimonial['name']
   .section
-
-    .row.center.margintop50
-      h4 WHO WE HAVE DONE IT FOR
-    .divider.teal.lighten-1.marginbot50
-    .margintop50
-
-    - count = 1
-    - clients.each_slice(3) do |client_group|
-      div[class="row center row#{count}"]
-        - count = count + 1
-        - client_group.each do |client|
-           div[class="logowrap #{client['name']} col s12 m6 l4"]
-            div
-              .logo
-                img.responsive-img src="img/Logos/#{client['logo']}"
+    .row
+      - clients.each do |client|
+         div[class="logowrap #{client['name']} col s12 m6 l4"]
+          div
+            .logo
+              img.responsive-img src="img/Logos/#{client['logo']}"
 
 #parallax-container2.parallax-container.valign-wrapper
   .section.no-pad-bot
@@ -92,15 +84,14 @@
       h6.light We believe software is a facilitator
       h6.light We build software that obeys you, not the other way round
       .marginbot50
-    - hows.each_slice(3) do |how_group|
-      .row.center
-        - how_group.each do |how|
-          .col.s12.m6.l4
-            div[class="card-panel waves-effect waves-light waves-ripple amber lighten-5 hoverable how #{how['header']} #{how['class']}"]
-              i.teal-text.material-icons.medium = "#{how['icon']}"
-              h3 = how["header"]
-              strong.thin = how["subheader"]
-              p.light = how["description"]
+    .row.center
+      - hows.each do |how|
+        .col.s12.m6.l4
+          div[class="card-panel waves-effect waves-light waves-ripple amber lighten-5 hoverable how #{how['header']} #{how['class']}"]
+            i.teal-text.material-icons.medium = "#{how['icon']}"
+            h3 = how["header"]
+            strong.thin = how["subheader"]
+            p.light = how["description"]
 
 #code.container
   br
@@ -117,16 +108,15 @@
         'Don't forget to check us out on
         a href="https://github.com/organizations/thoughtnirvana" Github
 
-    - repos.each_slice(4) do |repo_group|
-        .row
-          - repo_group.each do |repo|
-            .col.s12.m3.l3
-              .repo.card.amber.lighten-5.hoverable
-                .card-content
-                  a.teal-text href=repo["link"] = repo["header"]
-                  p.light = repo["description"]
-                .card-action
-                  span.card-title = repo["language"]
+      .row
+        - repos.each do |repo|
+          .col.s12.m4.l3
+            .repo.card.amber.lighten-5.hoverable
+              .card-content
+                a.teal-text href=repo["link"] = repo["header"]
+                p.light = repo["description"]
+              .card-action
+                span.card-title = repo["language"]
 
 #parallax-container3.parallax-container.valign-wrapper
   .section.no-pad-bot
@@ -181,16 +171,7 @@
 
     .row.center.margintop50
       .divider.teal.lighten-1.marginbot50
-      .col.s12.m4.l4
-        .careers.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
-          h4.thin Careers
-          p: a href="mailto:jobs@thoughtnirvana.com" jobs@thoughtnirvana.com
-          p.light Do you like what we do?
-          p.light Or think you can make things better?
-          p.light Do you live and breathe code?
-          p.light Or are the best business guy in the game?
-          p.light Our doors are open.
-      .col.s12.m4.l4
+      .col.s12.m12.l12
         .hire.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
           h1 Hire Us
           strong: a href="mailto:biz@thoughtnirvana.com" biz@thoughtnirvana.com
@@ -199,7 +180,17 @@
           p.light Or implement something never heard of before?
           p.light Or save money by automating existing processes?
           p.light Give us a shout
-      .col.s12.m4.l4
+    .row.center.margintop50
+      .col.s12.m6.l6
+        .careers.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
+          h4.thin Careers
+          p: a href="mailto:jobs@thoughtnirvana.com" jobs@thoughtnirvana.com
+          p.light Do you like what we do?
+          p.light Or think you can make things better?
+          p.light Do you live and breathe code?
+          p.light Or are the best business guy in the game?
+          p.light Our doors are open.
+      .col.s12.m6.l6
         .media.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
           h4.thin Media Enquiry
           p: a href="mailto:media@thoughtnirvana.com" media@thoughtnirvana.com
