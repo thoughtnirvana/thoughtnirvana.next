@@ -1,6 +1,6 @@
 @import 'reset.less';
 
-@blue-light: #add8e6;
+@blue-light: #0a299b;
 @black-light: #17181a;
 @black-lighter: #27282b;
 @red-nav: #ae1f23;
@@ -10,8 +10,8 @@
 
 body {
     font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    background-color: #ececed;
+    font-family: "Domine", Helvetica, sans-serif;
+    background: #fff; /* Old browsers */
     color: @gray-lighter;
 }
 a {
@@ -40,13 +40,21 @@ a {
   -moz-box-shadow: @x @y @blur @color;
   -o-box-shadow: @x @y @blur @color;
 }
+
 .header {
+    width: 100%; 
     height: 80px;
-    background-color: black;
+    background-color: white;
+    position: fixed;
+    margin-top: -40px;
     overflow: hidden;
     text-align: center;
     h1, ul.nav {
-        margin: 20px 5%;
+        margin: 30px 5%;
+    }
+    ul.nav a {
+        color: black;
+        font-size: 18px;
     }
 }
 .footer {
@@ -172,7 +180,15 @@ a {
     line-height: 2em;
     margin: 30px auto;
     width: @container-width;
-    background-color: @black-light;
+    /* background-color: @black-light; */
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cdeb8e+0,a5c956+100;Green+3D+%232 */
+    background: #ffaf4b; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffaf4b 0%, #ff920a 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffaf4b 0%,#ff920a 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffaf4b 0%,#ff920a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=0 ); /* IE6-9 */
+
+
     .box-radius;
     text-align: center;
     dl {
@@ -198,7 +214,7 @@ a {
             color: lighten(@blue-light, 10%);
         }
     }
-    font-size: 30px;
+    font-size: 40px;
 }
 .x-large {
     font-size: 40px;
@@ -211,7 +227,7 @@ a {
 ul.nav {
     list-style: none;
     overflow: hidden;
-    background-color: @red-nav;
+    background-color: white;
     @link-color: white;
     li {
         border-right: darken(@red-nav, 5%) 1px solid;
@@ -232,7 +248,16 @@ ul.nav {
     }
 }
 
-/* Highlight active tab */
+#nav li a { color: black; opacity:0.6; font-size: 16px; text-decoration: none; font-family: 'Domine'; }
+#nav li a.active { color: #fff; opacity:1; background-color: lighten(@red-nav, 20%); }
+#nav li a:hover { color: #fff; opacity:1; background-color: lighten(@red-nav, 20%);  }
+
+.clear {
+    margin-top: 50px;
+}
+
+
+/* Highlight active tab
 body.overview .nav li.overview,
 body.how .nav li.how,
 body.who .nav li.who,
@@ -247,7 +272,7 @@ body.contact .nav li.contact {
         }
     }
 
-}
+}*/
 body.error {
     .footer {
         position: absolute;

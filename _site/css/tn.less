@@ -1,6 +1,17 @@
+@keyframes bounceUp {
+  0% {
+    transform: translateY(30em);
+  }
+}
+
+@keyframes bounceDown {
+  0% {
+    transform: translateY(-30em);
+  }
+}
+
 body {
   max-width: 100%;
-  padding-top: 700px;
   transition: 0s linear;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,10 +29,14 @@ header {
     rgba(0, 0, 0, 0.55), 
     rgba(0, 0, 0, 0.55)
   ),
-  url(../img/9__.jpg) no-repeat 50% 50%;
-  /* background: url(../img/9.jpg) no-repeat center top; */
+  url(../img/1.jpg) no-repeat 50% 50%;
   min-height: 700px;
   padding-top: 50px;
+  top: 0;
+  width: 100%;
+  .headerContent {
+    padding-top: 70px;
+  }
 }
 
 .mainNav, .mainContainer {
@@ -41,7 +56,7 @@ nav ul a.btn {
   margin-right: 10px;
 }
 
-.mainNavScrolled, header {
+.mainNavScrolled {
   position: fixed;
   top: 0;
   width: 100%;
@@ -63,13 +78,6 @@ nav ul a.btn {
   }
 }
 
-/*rgb(239,154,154)
-rgb(244,143,177)
-rgb(206,147,216)
-rgb(41,182,246)
-rgb(66,165,245)
-rgb(171,71,188)*/
-
 .mainContainer {
   background: #ffffff;
   padding-top: 150px;
@@ -85,7 +93,7 @@ rgb(171,71,188)*/
     line-height: 25px;
   }
   h3 {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -157,7 +165,7 @@ p {
 
 .hows {
   .first {
-    height: 600px;
+    height: 620px;
   }
   .second {
     height: 515px;
@@ -168,7 +176,7 @@ p {
 }
 
 .repo {
-  height: 300px;
+  height: 200px;
   a {
     text-transform: uppercase;
     font-size: 18px;
@@ -194,7 +202,7 @@ p {
 
 #clients {
   .logowrap {
-    border: 1px solid #d7d5cc;
+    border: 0px solid #d7d5cc;
     padding-left: 45px;
     padding-top: 35px;
     padding-bottom: 35px;
@@ -268,6 +276,38 @@ p {
   }
 }
 
+@media only screen and (max-width : 1024px) {
+  nav .brand-logo {
+    font-size: 1.5rem;
+  }
+  .services {
+    .first  {
+      height: 400px;
+    }
+    .second, .third {
+      height: 320px;
+    }
+  }
+  .hows {
+    .first {
+      height: 740px;
+      width: 230px;
+    }
+    .second {
+      height: 610px;
+      width: 230px;
+    }
+  }
+  #team {
+    .card-panel {
+      height: inherit;
+    }
+  }
+  .repo {
+    height: 250px;
+  }
+}
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
@@ -318,7 +358,6 @@ p {
     }
   }
   .repo {
-    height: 320px;
     a {
       font-size: 14px;
       letter-spacing: 1px;

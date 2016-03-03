@@ -1,7 +1,7 @@
 (function($){
   $(function(){
 
-    $('.slider').slider({full_width: false, height: 200});
+    $('.slider').slider({full_width: false, height: 250});
     $('.slider').slider('start');
     $('.slider').slider('next');
     $('.button-collapse').sideNav({
@@ -12,6 +12,7 @@
   }); // end of document ready
 
   var mn = $(".mainNav");
+  // min-height for header is 700
   $(window).scroll(function() {
     if($(this).scrollTop() > 700) {
       mn.addClass("mainNavScrolled");
@@ -100,7 +101,7 @@ function updateGradient()
 var lastId,
     mainNav = $("#mainNav"),
     mainNavHeight = mainNav.outerHeight()+15,
-    navItems = mainNav.find("a"),
+    navItems = mainNav.find(".scrollspy"),
     scrollItems = navItems.map(function(){
       var item = $($(this).attr("href"));
       if (item.length) { return item; }
@@ -115,25 +116,39 @@ navItems.click(function(e){
   e.preventDefault();
 });
 
-// Bind to scroll
 $(window).scroll(function(){
-   // Get container scroll position
    var fromTop = $(this).scrollTop()+mainNavHeight;
    
-   // Get id of current scroll item
    var cur = scrollItems.map(function(){
      if ($(this).offset().top < fromTop)
        return this;
    });
-   // Get the id of the current element
    cur = cur[cur.length-1];
    var id = cur && cur.length ? cur[0].id : "";
    
    if (lastId !== id) {
        lastId = id;
-       // Set/remove active class
        navItems
          .parent().removeClass("active")
          .end().filter("[href='#"+id+"']").parent().addClass("active");
    }                   
 });
+//***** Scrollspy feature end *****/
+
+//***** Animation *****/
+function animateIfVisible(el, sub_el) {
+  currentTop = $(window).scrollTop();
+  windowHeight = $(window).height();
+  currentBottom = currentTop + windowHeight;
+  elTop = $(el).offset().top;
+  elHeight = $(el).height();
+  elBottom = elTop + elHeight;
+
+  if(elTop >= currentTop && elBottom <= currentBottom) {
+    $(sub_el).addClass("fadeUp");
+  } 
+}
+
+function addfadeInClass(el){ 
+  $(el).addClass("foo");
+}
