@@ -100,7 +100,7 @@ function updateGradient()
 var lastId,
     mainNav = $("#mainNav"),
     mainNavHeight = mainNav.outerHeight()+15,
-    navItems = mainNav.find("a"),
+    navItems = mainNav.find(".scrollspy"),
     scrollItems = navItems.map(function(){
       var item = $($(this).attr("href"));
       if (item.length) { return item; }
