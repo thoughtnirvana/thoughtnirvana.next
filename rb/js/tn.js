@@ -8,7 +8,7 @@
       closeOnClick: true
     });
     $('.parallax').parallax();
-    setInterval(,10);
+    setInterval(updateGradient,10);
   }); // end of document ready
 
   var mn = $(".mainNav");
@@ -146,9 +146,9 @@ function animateIfVisible(el, sub_el) {
 
   if(elTop >= currentTop && elBottom <= currentBottom) {
     $(sub_el).addClass("fadeUp");
-  }
+  } 
 }
 
-function addfadeInClass(el){
+function addfadeInClass(el){ 
   $(el).addClass("foo");
 }
