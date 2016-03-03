@@ -1,3 +1,15 @@
+@keyframes bounceUp {
+  0% {
+    transform: translateY(30em);
+  }
+}
+
+@keyframes bounceDown {
+  0% {
+    transform: translateY(-30em);
+  }
+}
+
 body {
   max-width: 100%;
   transition: 0s linear;
@@ -22,7 +34,7 @@ header {
   padding-top: 50px;
   top: 0;
   width: 100%;
-  .headertext {
+  .headerContent {
     padding-top: 70px;
   }
 }
@@ -153,7 +165,7 @@ p {
 
 .hows {
   .first {
-    height: 600px;
+    height: 620px;
   }
   .second {
     height: 515px;
@@ -164,7 +176,7 @@ p {
 }
 
 .repo {
-  height: 280px;
+  height: 200px;
   a {
     text-transform: uppercase;
     font-size: 18px;
@@ -261,6 +273,38 @@ p {
   }
   h5 {
     color: #fff;
+  }
+}
+
+@media only screen and (max-width : 1024px) {
+  nav .brand-logo {
+    font-size: 1.5rem;
+  }
+  .services {
+    .first  {
+      height: 400px;
+    }
+    .second, .third {
+      height: 320px;
+    }
+  }
+  .hows {
+    .first {
+      height: 740px;
+      width: 230px;
+    }
+    .second {
+      height: 610px;
+      width: 230px;
+    }
+  }
+  #team {
+    .card-panel {
+      height: inherit;
+    }
+  }
+  .repo {
+    height: 250px;
   }
 }
 

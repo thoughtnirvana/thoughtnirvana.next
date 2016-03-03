@@ -7,7 +7,7 @@
       h6.col.s12 BASED OUT OF THE BEAUTIFUL CITY OF BANGALORE
     .row.center.margintop50
       h4 WHAT WE DO
-    .divider.teal.lighten-1.marginbot50
+      .divider.teal.lighten-1.marginbot50
     .row.center
       - services.each do |service|
         .col.s12.m6.l4
@@ -53,7 +53,7 @@
         h4.header.col.s12.dark = tenets[1]["header"]
         h5.header.col.s12.dark = tenets[1]["description"]
   .parallax
-    img src="../img/2.jpg" alt="Unsplashed background img 3"
+    img src="../img/6.jpg" alt="Unsplashed background img 3"
 
 #hows.container.hows
   br
@@ -91,15 +91,14 @@
         'Don't forget to check us out on
         a href="https://github.com/organizations/thoughtnirvana" Github
 
-      .row
+      .row.center
         - repos.each do |repo|
           .col.s12.m4.l4
-            .repo.card.amber.lighten-5.hoverable
-              .card-content
-                a.teal-text href=repo["link"] = repo["header"]
-                p.light = repo["description"]
-              .card-action
-                span.card-title = repo["language"]
+            div[class="repo card-panel amber lighten-5 waves-effect waves-light waves-ripple hoverable"]
+              a.teal-text href=repo["link"] = repo["header"]
+              br
+              h7 = repo["language"]
+              p.light = repo["description"]
 
 #parallax-container3.parallax-container.valign-wrapper
   .section.no-pad-bot
