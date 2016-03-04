@@ -11,7 +11,7 @@
     .row.center
       - services.each do |service|
         .col.s12.m6.l4
-          div[class="topic card-panel waves-effect waves-light waves-ripple hoverable #{service['class']}"]
+          div[class="topic card-panel waves-effect waves-light light-blue lighten-5 waves-ripple hoverable #{service['class']}"]
             h3 = service["header"]
             h3 = service["header2"]
             p.light = service["description"]
@@ -69,8 +69,8 @@
     .row.center
       - hows.each do |how|
         .col.s12.m6.l4
-          div[class="card-panel waves-effect waves-light waves-ripple amber lighten-5 hoverable how #{how['header']} #{how['class']}"]
-            i.teal-text.material-icons.medium = "#{how['icon']}"
+          div[class="card-panel waves-effect waves-light waves-ripple light-blue lighten-5 hoverable how #{how['header']} #{how['class']}"]
+            i.blue-grey-text.material-icons.medium = "#{how['icon']}"
             h3 = how["header"]
             strong.thin = how["subheader"]
             p.light = how["description"]
@@ -88,13 +88,13 @@
       h6.light So to return the favor, we open source all non critical code
       h6.light
         'Don't forget to check us out on
-        a href="https://github.com/organizations/thoughtnirvana" Github
+        a.github href="https://github.com/organizations/thoughtnirvana" Github
 
       .row.center
         - repos.each do |repo|
           .col.s12.m4.l4
-            div[class="repo card-panel amber lighten-5 waves-effect waves-light waves-ripple hoverable"]
-              a.teal-text href=repo["link"] = repo["header"]
+            div[class="repo card-panel light-green lighten-4 waves-effect waves-light waves-ripple hoverable"]
+              a href=repo["link"] = repo["header"]
               br
               h7 = repo["language"]
               p.light = repo["description"]
@@ -116,9 +116,9 @@
       img.responsive-img src="img/zig.png"
     .row
       .col.s12.m6.l6
-        img.responsive-img.card-panel.waves-effect.waves-light.waves-ripple.red.lighten-5.hoverable src="img/rahul.jpg"
+        img.responsive-img.card-panel.waves-effect.waves-light.waves-ripple.hoverable src="img/rahul.jpg"
       .col.s12.m6.l6
-        .programmer1.card-panel.waves-effect.waves-light.waves-ripple.red.lighten-5.hoverable
+        .programmer1.card-panel.waves-effect.waves-light.waves-ripple.light-green.lighten-4.hoverable
           h5.thin Rahul Kumar
           p.light  Started Programming in high school
           p.light  List of Programming languages and framework that he hasn't played with is very short
@@ -131,7 +131,7 @@
           p.light  Can bench 100kg in sleep
     .row
       .col.s12.m6.l6
-        .programmer2.card-panel.waves-effect.waves-light.waves-ripple.teal.lighten-5.hoverable
+        .programmer2.card-panel.waves-effect.waves-light.waves-ripple.purple.lighten-4.hoverable
           h5.thin Ujjawal Asthana
           p.light  Lost his programming virginity to C but is currently married to Rails and shares a room with Web Development
           p.light  Is also good friends with Python and hangs out a lot with Javascript
@@ -143,7 +143,7 @@
           p.light  Latest Moview: Deadpool
           p.light  Can do 10 Dragon Flags without breaking a sweat
       .col.s12.m6.l6
-        img.responsive-img.card-panel.waves-effect.waves-light.waves-ripple.teal.lighten-5.hoverable src="img/ujj.jpg"
+        img.responsive-img.card-panel.waves-effect.waves-light.waves-ripple.hoverable src="img/ujj.jpg"
 
 #contacts.container.contacts
   br
@@ -152,7 +152,7 @@
     .row.center.margintop50
       img.marginbot100.responsive-img src="img/zig.png"
       .col.s12.m12.l12
-        .hire.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
+        .hire.card-panel.waves-effect.waves-light.waves-ripple.purple.lighten-4.hoverable
           h1 Hire Us
           strong: a href="mailto:biz@thoughtnirvana.com" biz@thoughtnirvana.com
           p.light First step is half the battle
@@ -162,7 +162,7 @@
           p.light Give us a shout
     .row.center.margintop50
       .col.s12.m6.l6
-        .careers.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
+        .careers.card-panel.waves-effect.waves-light.waves-ripple.hoverable
           h4.thin Careers
           p: a href="mailto:jobs@thoughtnirvana.com" jobs@thoughtnirvana.com
           p.light Do you like what we do?
@@ -171,7 +171,7 @@
           p.light Or are the best business guy in the game?
           p.light Our doors are open.
       .col.s12.m6.l6
-        .media.card-panel.waves-effect.waves-light.waves-ripple.yellow.lighten-5.hoverable
+        .media.card-panel.waves-effect.waves-light.waves-ripple.hoverable
           h4.thin Media Enquiry
           p: a href="mailto:media@thoughtnirvana.com" media@thoughtnirvana.com
           p.light Queries regarding press or marketing?

@@ -37,13 +37,14 @@
 
 //***** Changing Gradient for mainNav start *****/
 var colors = new Array(
-  [239,154,154],
-  [244,143,177],
-  [206,147,216],
-  [41,182,246],
+  [38,166,154],
+  [139,195,74],
+  [225,245,254],
+  [156,39,176],
   [66,165,245],
-  [171,71,188]
+  [189,189,189]
 );
+
 var step = 0;
 //color table indices for: 
 // current color left
