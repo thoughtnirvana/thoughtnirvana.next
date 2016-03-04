@@ -31,6 +31,7 @@
     $("body").animate({
       scrollTop:0
     },"slow");
+    Materialize.toast('I am a toast', 100000000000000000000000);
   });
 })(jQuery); // end of jQuery name space
 
