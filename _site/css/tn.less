@@ -1,13 +1,45 @@
-@keyframes bounceUp {
-  0% {
-    transform: translateY(30em);
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 }
 
-@keyframes bounceDown {
-  0% {
-    transform: translateY(-30em);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
   }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+html{
+  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif
 }
 
 body {
@@ -152,14 +184,41 @@ p {
   }
 }
 
+.bounceInLeft:nth-child(0) {
+  -webkit-animation-delay:2s;
+  -moz-animation-delay:2s;
+  -ms-animation-delay:2s;
+  -o-animation-delay:2s;
+  animation-delay:2s;
+}
+
 
 .services {
   padding-top: 50px;
   .first {
     height: 330px;
+    -webkit-animation-delay:0s;
+    -moz-animation-delay:0s;
+    -ms-animation-delay:0s;
+    -o-animation-delay:0s;
+    animation-delay:0s;
   }
   .second, .third {
     height: 270px;
+  }
+  .second {
+    -webkit-animation-delay:.25s;
+    -moz-animation-delay:.25s;
+    -ms-animation-delay:.25s;
+    -o-animation-delay:.25s;
+    animation-delay:.25s;
+  }
+  .third {
+    -webkit-animation-delay:.5s;
+    -moz-animation-delay:.5s;
+    -ms-animation-delay:.5s;
+    -o-animation-delay:.5s;
+    animation-delay:.5s;
   }
 }
 

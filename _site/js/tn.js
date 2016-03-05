@@ -32,6 +32,13 @@
       scrollTop:0
     },"slow");
   });
+  var options = [
+    {selector: '#services .topic', offset: 10, callback: '$(".topic").addClass("fadeInUp animated")' },
+    {selector: ' #clients .logowrap', offset: 10, callback: '$(".logowrap").addClass("fadeInUp animated")' },
+    {selector: ' #hows .how', offset: 10, callback: '$(".how").addClass("fadeInUp animated")' },
+    {selector: ' #code .repo', offset: 10, callback: '$(".repo").addClass("fadeInUp animated")' },
+  ];
+  Materialize.scrollFire(options);
 })(jQuery); // end of jQuery name space
 
 
