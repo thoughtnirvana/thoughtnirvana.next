@@ -1,16 +1,13 @@
 services:
-    - header: Rails
-      header2: Ruby
+    - header: Rails/Ruby
       class: first
       description: We have built all sorts of sites with Rails. It's an absolute pleasure to work with, not to mention it gets the job done fast - really, really fast.
 
-    - header: Django
-      header2: Python
+    - header: Django/Python
       class: first
       description: Django is the web framework for perfectionist with a deadline. That is an apt description; both for Django and us.
 
-    - header: Flask
-      header2: Sinatra
+    - header: Flask/Sinatra
       class: first
       description: API development might not need the whole baggage of Rails and Django. Also, Flask and Sinatra are pretty sweet.
 

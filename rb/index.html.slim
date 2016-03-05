@@ -3,18 +3,13 @@
   .section
 
     .row.center
-      h5.col.s12 THOUGHTNIRVANA IS A SOFTWARE DEVELOPMENT SHOP
-      h6.col.s12 BASED OUT OF THE BEAUTIFUL CITY OF BANGALORE
-    .row.center.margintop50
-      h4 WHAT WE DO
-      img.responsive-img src="img/zig.png"
+      h5.col.s12 ThoughtNirvana converts your requirements into functioning and reliable software.
     .row.center
       - services.each do |service|
         .col.s12.m6.l4
-          div[class="topic card-panel waves-effect waves-light light-blue lighten-5 waves-ripple hoverable #{service['class']}"]
-            h3 = service["header"]
-            h3 = service["header2"]
-            p.light = service["description"]
+          div[class="topic card-panel waves-effect waves-light waves-ripple hoverable #{service['class']}"]
+            h3.left = service["header"]
+            p.left = service["description"]
 
 #parallax-container1.parallax-container.valign-wrapper
   .section.no-pad-bot
