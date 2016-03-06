@@ -1,7 +1,7 @@
 (function($){
   $(function(){
 
-    $('.slider').slider({full_width: false, height: 250});
+    $('.slider').slider({full_width: false, height: 500});
     $('.slider').slider('start');
     $('.slider').slider('next');
     $('.button-collapse').sideNav({
@@ -35,7 +35,7 @@
   var options = [
     {selector: '#services .topic', offset: 10, callback: '$(".topic").addClass("fadeInUp animated")' },
     {selector: ' #clients .logowrap', offset: 10, callback: '$(".logowrap").addClass("fadeInUp animated")' },
-    {selector: ' #hows .how', offset: 10, callback: '$(".how").addClass("fadeInUp animated")' },
+    {selector: ' #hows .how', offset: 1, callback: '$(".how").addClass("fadeInUp animated")' },
     {selector: ' #code .repo', offset: 10, callback: '$(".repo").addClass("fadeInUp animated")' },
   ];
   Materialize.scrollFire(options);

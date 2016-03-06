@@ -24,22 +24,24 @@
   br
   .section
     .row.center.margintop50
-      h4 WHO WE HAVE DONE IT FOR
-      img.responsive-img src="img/zig.png"
-      .slider
-        ul.slides
-          - testimonials.each do |testimonial|
-            li
-              .caption.right-align
-                blockquote.teal-text = testimonial['say']
-                h5.light.teal-text = testimonial['name']
-  .section
-    .row
+      h5 We've worked with organizations of various sizes.
+    .row.center
       - clients.each do |client|
-         div[class="logowrap #{client['name']} col s12 m6 l4"]
+        div[class="logowrap #{client['name']} col s6 m4 l2"]
           div
             .logo
               img.responsive-img src="img/Logos/#{client['logo']}"
+    .row.center
+      .col.s12
+        .slider
+          ul.slides
+            - testimonials.each do |testimonial|
+              li
+                .caption.right-align
+                  blockquote = testimonial['say']
+                  h5
+                    i = testimonial['name']
+
 
 #parallax-container2.parallax-container.valign-wrapper
   .section.no-pad-bot
@@ -54,45 +56,44 @@
   br
   .section
     .row.center.margintop50
-      h4 HOW WE DO
-      img.responsive-img src="img/zig.png"
-      h3 The ThoughtNirvana way
-      h6.light Software for the humans, by the humans
-      h6.light We believe software is a facilitator
-      h6.light We build software that obeys you, not the other way round
+      h4.heading The ThoughtNirvana way.
+      h5.sub-heading Software for the humans, by the humans.
+      h5.sub-heading We believe software is a facilitator.
+      h5.sub-heading We build software that obeys you, not the other way round.
       .marginbot50
     .row.center
       - hows.each do |how|
-        .col.s12.m6.l4
-          div[class="card-panel waves-effect waves-light waves-ripple light-blue lighten-5 hoverable how #{how['header']} #{how['class']}"]
-            i.blue-grey-text.material-icons.medium = "#{how['icon']}"
-            h3 = how["header"]
-            strong.thin = how["subheader"]
+        .row
+          .col.s12.m6.l6
+            i.material-icons.medium = "#{how['icon']}"
+            h1 = how["header"]
+          .col.s12.m6.l6
+            h4.thin = how["subheader"]
             p.light = how["description"]
+
 
 #code.container
   br
   .section
 
     .row.center.margintop50
-      h4 WHAT WE HAVE DONE IN THE OPEN
-      img.responsive-img src="img/zig.png"
-      h3 ThoughtNirvana endorses open source
-      h6.light Many of the biggies viz. Google, Amazon depend on open source software
-      h6.light We have benefitted a lot from open source
-      h6.light So to return the favor, we open source all non critical code
-      h6.light
+      h4.heading ThoughtNirvana endorses open source
+      h5.sub-heading Many of the biggies viz. Google, Amazon depend on open source software
+      h5.sub-heading We have benefitted a lot from open source
+      h5.sub-heading So to return the favor, we open source all non critical code
+      h5.sub-heading
         'Don't forget to check us out on
         a.github href="https://github.com/organizations/thoughtnirvana" Github
 
-      .row.center
+      .row.left
         - repos.each do |repo|
-          .col.s12.m4.l4
-            div[class="repo card-panel light-green lighten-4 waves-effect waves-light waves-ripple hoverable"]
-              a href=repo["link"] = repo["header"]
-              br
+          .col.s6.m4.l3
+            div[class="repo card-panel waves-effect waves-light waves-ripple hoverable"]
               h7 = repo["language"]
+              br
+              a href=repo["link"] = repo["header"]
               p.light = repo["description"]
+
 
 #parallax-container3.parallax-container.valign-wrapper
   .section.no-pad-bot

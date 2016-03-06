@@ -2,9 +2,6 @@ clients:
     - name: idt
       logo: idt.png
 
-    - name: earbits
-      logo: earbits.png
-
     - name: feefighters
       logo: feefighters.png
 
@@ -16,6 +13,9 @@ clients:
 
     - name: mapunity
       logo: mapunity.png
+
+    - name: earbits
+      logo: earbits.png
 
 
 

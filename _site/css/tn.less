@@ -227,6 +227,7 @@ nav .brand-logo {
     color: #24645E;
   }
   h3 {
+    /*color: #792c5c;*/
     color: #24645E;
     font-weight: 600;
     font-size: 1.8em;
@@ -239,6 +240,8 @@ nav .brand-logo {
 }
 
 .hows {
+  .how {
+  }
   .first {
     height: 620px;
   }
@@ -246,8 +249,36 @@ nav .brand-logo {
     height: 515px;
   }
   p {
-    letter-spacing: .2px;
+    text-align: left;
+    font-size: 17px;
+    color: #424A38;
   }
+  h1 {
+    color: #24645E;
+  }
+  h4 {
+    text-align: left;
+    color: #24645E;
+  }
+  .heading, .sub-heading {
+    text-align: center;
+  }
+  .sub-heading {
+    color: #424A38;
+  }
+  i {
+    color: #24645E;
+  }
+  .how:after {
+      content: "";
+      position:absolute;
+      bottom:0; left:0;
+      width:100%; height:0px;
+      background:linear-gradient(rgba(123,42,92, 0.7), rgba(123,42,92, 0.7));
+      z-index:-1;
+      transition: height 0.4s;
+  }
+  .how:hover:after { height:100%; }
 }
 
 #code {
@@ -257,13 +288,23 @@ nav .brand-logo {
   a:hover {
     text-decoration: underline;
   }
-}
-.repo {
-  height: 200px;
-  a {
-    text-transform: uppercase;
-    font-size: 18px;
-    letter-spacing: 2px;
+  .heading {
+    color: #24645E;
+  }
+  .heading, .sub-heading {
+    text-align: center;
+  }
+  .sub-heading {
+    color: #424A38;
+  }
+  .repo {
+    height: 210px;
+    width: 200px;
+    a {
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
   }
 }
 
@@ -286,9 +327,6 @@ nav .brand-logo {
 #clients {
   .logowrap {
     border: 0px solid #d7d5cc;
-    padding-left: 45px;
-    padding-top: 35px;
-    padding-bottom: 35px;
   }
   .idt {
     border-top:0px;
@@ -319,14 +357,26 @@ nav .brand-logo {
     .slides {
       background-color: inherit;
     }
-  }
-  .slider {
+    blockquote {
+      font-size: 2em;
+      color: #24645E;
+    }
+    h5 {
+      color: #484F3E
+    }
     .indicators .indicator-item {
       background-color: #9e9e9e;
     }
     .indicators .indicator-item.active {
       background-color: #4db6ac;
     }
+  }
+  h5 {
+    color: #24645E;
+    letter-spacing: 3px;
+    font-weight: 600;
+    line-height: 35px;
+    font-size: 2rem;
   }
 }
 
