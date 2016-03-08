@@ -2,15 +2,14 @@ testimonials:
     - name: Gloria Miletta, IDT Corporation
       say: Working with this team has been such a pleasure. They provided hours of dedication to turn our old buggy database into an amazing and useful tool. We explained our vision and they came up with a way to implement it. They were also always available to answer questions no matter what time of day or night.
 
-    - name: Alex Podles, IDT Corporation
-      say: Random Text
-
+    - name: Jonathon Morgan, SATrails
+      say: ThoughtNirvana are a team of dedicated, professional engineers who adapted to our development workflow and contributed across the stack -- from our front-end JavaScript through a scripted deployment (that's still how we move code into production!).
+    
     - name: Yotam Rosenbaum, Earbits
+      say: Working with ThoughtNirvana was a pleasure.  Their team was an extension of our in house technical team, working together to develop and deliver on time. Their strength stems from their availability, the turnaround time, and most importantly, their technical skills. I highly recommend their service.
+
+    - name: Alex Podles, IDT Corporation
       say: Random Text
 
     - name: Thomas Davis, Earbits
       say: Random Text
-
-    - name: Jonathon Morgan, SATrails
-      say: Random Text
-
