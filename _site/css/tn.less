@@ -1,3 +1,4 @@
+
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
@@ -189,7 +190,7 @@ nav .brand-logo {
 }
 
 
-.services {
+#services {
   padding-top: 50px;
   .first {
     height: 190px;
@@ -239,15 +240,7 @@ nav .brand-logo {
   }
 }
 
-.hows {
-  .how {
-  }
-  .first {
-    height: 620px;
-  }
-  .second {
-    height: 515px;
-  }
+#hows {
   p {
     text-align: left;
     font-size: 17px;
@@ -319,8 +312,9 @@ nav .brand-logo {
   }
 }
 
-.contacts {
+#contacts {
   .hire {
+    width: 300px;
     height: 500px;
     margin-top: -35px;
     a {
@@ -328,6 +322,7 @@ nav .brand-logo {
     }
   }
   .careers, .media {
+    width: 280px;
     height: 420px;
     a {
       font-size: 18px;
@@ -369,7 +364,7 @@ nav .brand-logo {
       background-color: inherit;
     }
     blockquote {
-      font-size: 2em;
+      font-size: 2rem;
       color: #24645E;
     }
     h5 {
@@ -394,6 +389,7 @@ nav .brand-logo {
 #team {
   .card-panel {
     height: 600px;
+    width: 450px;
   }
   h4 {
     color: #24645E;
@@ -402,7 +398,7 @@ nav .brand-logo {
     color: #24645E;
   }
   p {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     letter-spacing: 1px;
   }
 }
@@ -421,7 +417,7 @@ nav .brand-logo {
   width: 100%;
 }
 
-#parallax-container1, #parallax-container2, #parallax-container3 {
+.parallax-container {
   h4, h5 {
     letter-spacing: 3px;
     font-weight: 300;
@@ -434,31 +430,85 @@ nav .brand-logo {
   nav .brand-logo {
     font-size: 1.5rem;
   }
-  .services {
+  #services {
     .first  {
-      height: 400px;
+      height: 240px;
     }
     .second, .third {
-      height: 320px;
+      height: 200px;
     }
   }
-  .hows {
-    .first {
-      height: 740px;
-      width: 230px;
+  #clients {
+    .slider {
+      blockquote {
+        font-size: 1.6rem;
+      }
+      h5 {
+        font-size: 1.6rem;
+      }
     }
-    .second {
-      height: 610px;
-      width: 230px;
+  }
+  #hows {
+    .heading {
+      font-size: 2rem;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+    }
+    h1 {
+      font-size: 2.8rem;
+    }
+    h4 {
+      font-size: 2.2rem;
+    }
+    p {
+      font-size: 1rem;
     }
   }
   #team {
     .card-panel {
-      height: inherit;
+      height: auto;
+      width: auto;
     }
   }
-  .repo {
-    height: 250px;
+  #code {
+    .repo {
+      width: 180px;
+      height: 220px;
+    }
+    .heading {
+      font-size: 2rem;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+    }
+    h1 {
+      font-size: 2.8rem;
+    }
+    h5 {
+      font-size: 2.2rem;
+    }
+  }
+  #contacts {
+    .hire, .careers, .media {
+      width: auto;
+    }
+    .hire {
+      height: 440px;
+      margin-top: 5px;
+      a {
+        font-size: 16px;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+    }
+    .careers, .media {
+      height: 440px;
+      a {
+        font-size: 14px;
+      }
+    }
   }
 }
 
@@ -475,19 +525,20 @@ nav .brand-logo {
       font-size: 60px;
     }
   }
-  .services {
+  #services {
     .first, .second, .third  {
-      height: 330px;
+      height: 220px;
     }
   }
-  .hows {
-    .first, .second {
-      height: 630px;
-      width: 260px;
+  #clients {
+    .slider {
+      blockquote {
+        font-size: 1.3rem;
+      }
+      h5 {
+        font-size: 1.2rem;
+      }
     }
-  }
-  .second {
-    height: 515px;
   }
   #team {
     .card-panel {
@@ -505,10 +556,8 @@ nav .brand-logo {
       letter-spacing: 3px;
       line-height: 20px;
     }
-  }
-  #clients {
-    .logowrap {
-      border: none;
+    .tenet {
+      margin-top: -50px;
     }
   }
   .repo {
@@ -526,8 +575,11 @@ nav .brand-logo {
       height: 400px !important;
     }
   }
-  .contacts .careers, .contacts .media {
-    width: 260px;
+  #contacts .hire {
+    width: auto;
+  }
+  #contacts .careers, #contacts .media {
+    width: auto;
     a {
       font-size: 14px;
     }
@@ -554,26 +606,80 @@ nav .brand-logo {
       height: auto;
     }
   }
-  .contacts {
+  #contacts {
     .hire {
       height: 500px;
       margin-top: inherit;
     }
   }
-  #clients .logowrap {
-    padding-left: 75px;
-  }
-  .hows {
-    .first, .second {
-      height: auto;
-      width: inherit;
+  #clients {
+    .logowrap {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .slider {
+      blockquote {
+        font-size: 1rem;
+      }
+      h5 {
+        font-size: 1rem;
+      }
+    }
+    h5 {
+      font-size: 1rem;
     }
   }
-  .repo {
-    height: auto;
-    a {
-      font-size: 12px;
+  #hows {
+    h4, p{
+      text-align: center;
+    }
+    h4 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+    h5 {
       letter-spacing: .5px;
+      line-height: 20px;
+    }
+    .heading {
+      font-size: 2rem;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+    }
+  }
+  #code {
+    h1 {
+      font-size: 3.2rem;
+    }
+    h5 {
+      letter-spacing: .5px;
+      line-height: 20px;
+    }
+    .heading {
+      font-size: 2rem;
+    }
+    .sub-heading {
+      font-size: 1.2rem;
+    }
+    .repo {
+      width: 150px;
+      height: 220px;
+      a {
+        font-size: 12px;
+        letter-spacing: .5px;
+      }
+    }
+  }
+  #team {
+    .card-panel {
+      width: auto;
+      height: auto;
     }
   }
 }
