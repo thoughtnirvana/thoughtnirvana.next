@@ -14,13 +14,14 @@ html lang="en"
 
     body data-spy="scroll" data-offset="0" data-target="#theMenu"
     body
-      == render '_header.html.slim', false
-      #mainContainer.mainContainer
-        == yield
-        == render '_footer.html.slim', false
       == js_tag 'js/less.min.js'
       == js_tag 'js/jquery.js'
       == js_tag 'js/materialize.js'
+      == render '_header.html.slim', false
       == js_tag 'js/tn.js'
       == js_tag 'js/smoothscroll.js'
+      #mainContainer.mainContainer
+        == yield
+        == render '_footer.html.slim', false
+
 
