@@ -100,25 +100,19 @@ def page_index
 end
 
 def page_code
-  repos = load_yaml('data/repos.yml')['repos'].sort_by {|repo| repo['header'].downcase }
-  scope = Env.new(repos: repos, page_name: 'code')
-  scope.render('code.html.slim')
+    page_index
 end
 
 def page_how
-  hows = load_yaml('data/hows.yml')['hows']
-  scope = Env.new(hows: hows, page_name: 'how')
-  scope.render('how.html.slim')
+    page_index
 end
 
 def page_who
-  scope = Env.new(page_name: 'who')
-  scope.render('who.html.slim')
+    page_index
 end
 
 def page_contact
-  scope = Env.new(page_name: 'contact')
-  scope.render('contact.html.slim')
+    page_index
 end
 
 gen_site(pretty: true) if __FILE__ == $0

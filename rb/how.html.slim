@@ -1,13 +1,1 @@
-.center.intro
-  h1.x-large The ThoughtNirvana way 
-  p.large Software for the humans, by the humans
-  p.large We believe software is a facilitator
-  p.large We build software that obeys you, not the other way round
-
-.container
-  ol
-    - hows.each do |how|
-      li
-        h3 = how["header"]
-        p.small = how["subheader"]
-        p = how["description"]
+== render 'index.html.slim', false
