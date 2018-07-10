@@ -1,0 +1,27 @@
+services:
+    - header: Javascript
+      description: Web runs on Javascript. React/Angular/Vanilla JS - you have heard of it, we have probably worked with it.
+
+    - header: Java
+      description: If runtime performance and large teams are the question, Java is still a reasonable answer.
+
+    - header: Django/Python
+      description: Django is the web framework for perfectionist with a deadline. That is an apt description; both for Django and us.
+
+    - header: Flask/Sinatra
+      description: API development might not need the whole baggage of Rails and Django. Also, Flask and Sinatra are pretty sweet.
+
+    - header: Rails/Ruby
+      description: We have built all sorts of sites with Rails. It's an absolute pleasure to work with, not to mention it gets the job done fast - really, really fast.
+
+    - header: Architecture
+      description: We have designed and deployed systems of all size. CMS, Social network, CRM - been there, done it all.
+
+    - header: Security
+      description: Web is a big, bad place. We write elegant, secure code and also conduct security audits.
+
+    - header: Process
+      description: Sometimes a little re-adjustment can do wonders. We can help you rediscover joy of software development. 
+
+    - header: Consulting
+      description: Need help with legacy systems; or learn about MongoDB, Redis, Clojure? Give us a shout.

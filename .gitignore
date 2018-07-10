@@ -1,3 +1,5 @@
-.byebug-history
+.byebug_history
 .DS_Store
 tags
+.sass-cache
+_build
