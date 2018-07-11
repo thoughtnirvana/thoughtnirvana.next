@@ -1,6 +1,7 @@
 require 'aws-sdk-s3'
 require 'json'
 require 'digest/md5'
+require 'byebug'
 
 creds = JSON.load(File.read('credentials.json'))
 s3 = Aws::S3::Client.new(credentials: Aws::Credentials.new(creds['accessKey'], creds['secretKey']),
@@ -15,7 +16,7 @@ namespace :static do
     })
     .contents
     .reduce({}) do |key_and_etag, current|
-      key_and_etag[current[:key]] = current[:etag]
+      key_and_etag[current.key] = current.etag
       key_and_etag
     end
 
@@ -28,7 +29,7 @@ namespace :static do
       upload_etag = Digest::MD5.hexdigest(upload_contents)
       remote_file = file.gsub("#{static_build_dir}/", '')
 
-      next if upload_etag == current_etag[remote_file]
+      next if "\"#{upload_etag}\"" == current_etag[remote_file]
 
       Environment.logger.info("Uploading #{file} to s3 as #{remote_file}")
       s3.put_object({
