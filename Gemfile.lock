@@ -1,8 +1,24 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aws-eventstream (1.0.1)
+    aws-partitions (1.95.0)
+    aws-sdk-core (3.22.1)
+      aws-eventstream (~> 1.0)
+      aws-partitions (~> 1.0)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.6.0)
+      aws-sdk-core (~> 3)
+      aws-sigv4 (~> 1.0)
+    aws-sdk-s3 (1.16.1)
+      aws-sdk-core (~> 3, >= 3.21.2)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.0)
+    aws-sigv4 (1.0.3)
     byebug (10.0.2)
     concurrent-ruby (1.0.5)
+    jmespath (1.4.0)
     rack (2.0.5)
     slim (3.0.9)
       temple (>= 0.7.6, < 0.9)
@@ -17,6 +33,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk-s3
   byebug
   slim
   sprockets (~> 4.0.0.beta8)
