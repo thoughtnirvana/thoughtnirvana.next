@@ -3,8 +3,8 @@ html
   head
     meta charset="utf-8"
     title ThoughtNirvana
-    link rel='stylesheet' type='text/css' href='/assets/stylesheets/base.css'
-    link href="/assets/images/favicon.ico" rel="shortcut icon"
+    == stylesheet_link_tag 'base.css'
+    link href="/assets/favicon.ico" rel="shortcut icon"
     body class="#{page_name}"
       == render 'app/views/_header.slim'
       == yield
