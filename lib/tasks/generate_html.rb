@@ -19,6 +19,7 @@ namespace :static do
       output_file_contents = Module.const_get(class_name).new.render
 
       next if File.exist?(output_file) && output_file_contents == File.read(output_file)
+      Environment.logger.info("Generating #{output_file} from #{controller}")
 
       FileUtils.mkdir_p(output_dir) unless File.exist?(output_dir)
       File.open(output_file, 'w') {|f| f.write output_file_contents}
