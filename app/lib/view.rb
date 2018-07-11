@@ -1,4 +1,5 @@
 require 'slim'
+require_relative '../../config/environment'
 
 class View
   def initialize(scope = {}, prod = false)
@@ -14,50 +15,28 @@ class View
     contents
   end
 
-  def link_tag(filename, rel, type)
-    filename = with_digest(filename) if @prod
-    <<-LINK
-    <link href="#{filename}" rel="#{rel}" type="#{type}" />
-    LINK
+  def stylesheet_link_tag(filename)
+    <<-CSS
+    <link href="#{assets_path filename}" rel="stylesheet" type="text/css" />
+    CSS
   end
 
-  def css_tag(filename)
-    link_tag(filename, 'stylesheet', 'text/css')
-  end
-
-  def less_tag(filename)
-    link_tag(filename, 'stylesheet/less', 'text/css')
-  end
-
-  def js_tag(filename)
-    filename = with_digest(filename) if @prod
+  def javascript_include_tag(filename)
     <<-JS
-    <script src="#{filename}" type="text/javascript"></script>
+    <script src="#{assets_path filename}" type="text/javascript"></script>
     JS
   end
 
-  def img_tag(filename, opts = {})
+  def image_tag(filename, opts = {})
     opts = opts.reduce('') { |accum, (k, v)| "#{accum} #{k}=\"#{v}\"" }
-    filename = with_digest(filename) if @prod
     <<-IMG
-    <img src="#{filename}" "#{opts}" />
+    <img src="#{assets_path filename}" "#{opts}" />
     IMG
   end
 
-  private
-
-  def with_digest(filename)
-    hexdigest = sha1_digest(filename)
-    ext = File.extname filename
-    sans_ext = filename.sub(/#{ext}$/, '')
-    "#{sans_ext}.#{hexdigest}#{ext}"
-  end
-
-  def sha1_digest(filename)
-    digest = Digest::MD5.new
-    File.open(filename) do |file|
-      digest.update file.read(8192) until file.eof
-    end
-    digest.hexdigest
+  def assets_path(filename)
+    assets_root = Environment.config.assets_output_dir
+    assets_file_name = Environment.config.assets_manifest.assets[filename]
+    "/#{assets_root}/#{assets_file_name}"
   end
 end
