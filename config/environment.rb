@@ -1,4 +1,5 @@
 require 'ostruct'
+require 'logger'
 require 'sprockets'
 
 $LOAD_PATH.unshift Dir.pwd
@@ -26,6 +27,12 @@ class Environment
     config.assets_sources.each { |source| config.sprockets_environment.append_path source }
     config.assets_manifest = Sprockets::Manifest.new config.sprockets_environment.index, config.assets_manifest_path
 
+    config.s3_bucket = 'thoughtnirvana.com'
+
     config
+  end
+
+  def self.logger
+    logger = Logger.new(STDOUT)
   end
 end
