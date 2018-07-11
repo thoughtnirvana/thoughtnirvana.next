@@ -8,6 +8,7 @@ class Environment
     config = OpenStruct.new
 
     config.static_build_dir = '_build'
+    config.static_serve_port = 3000
 
 
     config.assets = ['base.css'] +
