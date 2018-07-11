@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
 gem 'slim'
-gem 'sprockets-standalone'
+gem 'sprockets', '~> 4.0.0.beta8'
 gem 'byebug'
